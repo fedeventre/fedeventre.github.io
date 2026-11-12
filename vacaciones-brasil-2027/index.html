@@ -1026,6 +1026,21 @@ Necesitamos 4 habitaciones simultáneas para 7 adultos, 2 niños y 1 bebé (0 a�
           : `Olá, ${hotel}! Tudo bem? Gostaria de consultar disponibilidade e tarifa direta para um grupo familiar (4 quartos: 7 adultos, 2 crianças e 1 bebê de 0 anos) de 18/01/2027 a 28/01/2027 (10 diárias), com café da manhã incluído e cozinha/kitchenette para o bebê no Quarto 3. Muito obrigado!`;
         a.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
       });
+
+      document.querySelectorAll('.summary-table a[href^="#opt-"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href').slice(1);
+          const target = document.getElementById(targetId);
+          if (!target) return;
+          e.preventDefault();
+          if (target.style.display === 'none') {
+            const allBtn = document.querySelector('.filter-btn');
+            if (allBtn) filterCards('all', allBtn);
+          }
+          const y = target.getBoundingClientRect().top + window.pageYOffset - 76;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+      });
     });
   </script>
 </body>
