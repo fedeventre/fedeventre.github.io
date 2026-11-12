@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vacaciones Familiares Brasil 2027 — Ranking de 14 Opciones Validadas</title>
+  <title>Vacaciones Brasil 2027 — 16 Opciones Validadas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8fafc;
+      --bg: #f1f5f9;
       --surface: #ffffff;
       --text: #0f172a;
       --muted: #475569;
@@ -18,645 +18,175 @@
       --primary-light: #e0f2fe;
       --accent: #0d9488;
       --accent-light: #ccfbf1;
-      --warning: #d97706;
-      --warning-light: #fef3c7;
+      --combo-bg: #fffbeb;
+      --combo-border: #fcd34d;
+      --combo-text: #92400e;
       --success: #16a34a;
+      --success-dark: #15803d;
       --success-light: #dcfce7;
       --border: #e2e8f0;
-      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      --shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
       --radius: 16px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #0369a1 60%, #0d9488 100%);
-      color: #ffffff;
-      padding: 48px 24px 40px;
-      text-align: center;
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .badge-top {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(8px);
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin-bottom: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    h1 {
-      font-size: clamp(1.8rem, 4vw, 2.75rem);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: #e2e8f0;
-      max-width: 850px;
-      margin: 0 auto 28px;
-    }
-
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 14px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .kpi-card {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 14px 18px;
-      text-align: left;
-    }
-
-    .kpi-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #bae6fd;
-      font-weight: 600;
-    }
-
-    .kpi-value {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-top: 4px;
-      color: #ffffff;
-    }
-
-    .container {
-      max-width: 1240px;
-      margin: 32px auto 0;
-      padding: 0 20px;
-    }
-
-    .section-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      padding: 28px;
-      margin-bottom: 32px;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .section-desc {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    /* Room distribution banner */
-    .rooms-banner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-    }
-
-    .room-pill {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-      background: #f8fafc;
-    }
-
-    .room-pill.baby-highlight {
-      background: #f0fdf4;
-      border-color: #86efac;
-    }
-
-    .room-pill h4 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-
-    .room-pill p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* Filter controls */
-    .filters-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .filter-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .filter-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    /* Summary Table */
-    .table-responsive {
-      overflow-x: auto;
-    }
-
-    table.summary-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.88rem;
-    }
-
-    table.summary-table th,
-    table.summary-table td {
-      padding: 12px 14px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    table.summary-table th {
-      background: #f1f5f9;
-      font-weight: 700;
-      color: #334155;
-      white-space: nowrap;
-    }
-
-    table.summary-table tr:hover {
-      background: #f8fafc;
-    }
-
-    .rank-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 0.85rem;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-    }
-
-    .rank-top3 {
-      background: #fef3c7;
-      color: #b45309;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 600;
-    }
-
-    .tag-beachfront {
-      background: var(--accent-light);
-      color: #0f766e;
-    }
-
-    .tag-kitchen {
-      background: var(--success-light);
-      color: #15803d;
-    }
-
-    .tag-zone {
-      background: #e2e8f0;
-      color: #334155;
-    }
-
-    /* Hotel Cards */
-    .hotel-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      margin-bottom: 28px;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .hotel-header {
-      padding: 22px 26px;
-      background: linear-gradient(to right, #f8fafc, #ffffff);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .hotel-title-group {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .hotel-rank-line {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-
-    .hotel-rank-pill {
-      background: var(--primary);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.85rem;
-      padding: 4px 12px;
-      border-radius: 8px;
-    }
-
-    .hotel-name {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .hotel-address {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .hotel-price-box {
-      text-align: right;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      padding: 12px 18px;
-      border-radius: 12px;
-      min-width: 220px;
-    }
-
-    .price-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: #15803d;
-    }
-
-    .price-total {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #166534;
-      line-height: 1.2;
-    }
-
-    .price-sub {
-      font-size: 0.8rem;
-      color: #15803d;
-      font-weight: 500;
-    }
-
-    /* Photo Gallery */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      padding: 20px 26px 0;
-    }
-
-    @media (max-width: 768px) {
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
-      .hotel-price-box {
-        text-align: left;
-        width: 100%;
-      }
-    }
-
-    .photo-item {
-      position: relative;
-      height: 210px;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #e2e8f0;
-      border: 1px solid var(--border);
-    }
-
-    .photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .photo-item:hover img {
-      transform: scale(1.04);
-    }
-
-    .photo-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(15, 23, 42, 0.85));
-      color: #fff;
-      padding: 18px 12px 8px;
-      font-size: 0.78rem;
-      font-weight: 500;
-    }
-
-    .hotel-body {
-      padding: 22px 26px 26px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.55; padding-bottom: 64px; -webkit-font-smoothing: antialiased; }
+    header { background: linear-gradient(135deg, #0f172a 0%, #0369a1 55%, #0d9488 100%); color: #ffffff; padding: 36px 20px 32px; text-align: center; }
+    .header-container { max-width: 1200px; margin: 0 auto; }
+    .badge-top { display: inline-block; background: rgba(255, 255, 255, 0.16); padding: 6px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 14px; border: 1px solid rgba(255, 255, 255, 0.25); }
+    h1 { font-size: clamp(1.6rem, 4.5vw, 2.55rem); font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .subtitle { font-size: 0.98rem; color: #e2e8f0; max-width: 820px; margin: 0 auto 22px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; max-width: 1100px; margin: 0 auto; }
+    .kpi-card { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 12px; padding: 12px 16px; text-align: left; }
+    .kpi-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #bae6fd; font-weight: 700; }
+    .kpi-value { font-size: 1rem; font-weight: 700; margin-top: 3px; color: #ffffff; }
+    .lang-banner { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); padding: 8px 14px; border-radius: 999px; margin-bottom: 18px; flex-wrap: wrap; justify-content: center; }
+    .lang-toggle-btn { background: #ffffff; color: #0f172a; border: none; padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease; }
+    .lang-toggle-btn:hover { background: #e0f2fe; }
+    .container { max-width: 1220px; margin: 24px auto 0; padding: 0 16px; }
+    .section-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); padding: 24px; margin-bottom: 24px; }
+    .section-title { font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .section-desc { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; }
+    .rooms-banner { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .room-pill { border: 1px solid var(--border); border-radius: 12px; padding: 14px; background: #f8fafc; }
+    .room-pill.baby-highlight { background: #f0fdf4; border-color: #86efac; }
+    .room-pill h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .room-pill p { font-size: 0.84rem; color: var(--muted); }
+    .filters-bar { position: sticky; top: 0; z-index: 20; background: rgba(241, 245, 249, 0.96); backdrop-filter: blur(8px); padding: 12px 0; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .filters-inner { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .filter-group { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; max-width: 100%; }
+    .filter-btn { background: var(--surface); border: 1px solid var(--border); color: var(--muted); padding: 9px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: all 0.2s ease; }
+    .filter-btn:hover, .filter-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+    .scroll-hint { display: none; font-size: 0.78rem; color: var(--primary-dark); font-weight: 600; margin-bottom: 8px; }
+    .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; border: 1px solid var(--border); }
+    table.summary-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 780px; }
+    table.summary-table th, table.summary-table td { padding: 11px 12px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    table.summary-table th { background: #f8fafc; font-weight: 700; color: #334155; white-space: nowrap; }
+    table.summary-table tr:hover { background: #f8fafc; }
+    table.summary-table a { color: var(--primary-dark); font-weight: 600; text-decoration: none; }
+    table.summary-table a:hover { text-decoration: underline; }
+    .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; font-weight: 800; font-size: 0.82rem; background: var(--primary-light); color: var(--primary-dark); }
+    .rank-top3 { background: #fef3c7; color: #b45309; }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; }
+    .tag-beachfront { background: var(--accent-light); color: #0f766e; }
+    .tag-kitchen { background: var(--success-light); color: #15803d; }
+    .tag-combo { background: var(--combo-bg); color: var(--combo-text); border: 1px solid var(--combo-border); }
+    .tag-zone { background: #e2e8f0; color: #334155; }
+    .hotel-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 24px; overflow: hidden; }
+    .hotel-card.combo-card { border: 2px solid var(--combo-border); }
+    .hotel-header { padding: 20px 22px; background: linear-gradient(to right, #f8fafc, #ffffff); border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 14px; }
+    .hotel-title-group { flex: 1; min-width: 250px; }
+    .hotel-rank-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .hotel-rank-pill { background: var(--primary); color: #fff; font-weight: 800; font-size: 0.8rem; padding: 4px 10px; border-radius: 8px; }
+    .hotel-name { font-size: 1.28rem; font-weight: 800; color: var(--text); line-height: 1.25; }
+    .hotel-address { font-size: 0.86rem; color: var(--muted); margin-top: 6px; }
+    .hotel-price-box { text-align: right; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 12px 16px; border-radius: 12px; min-width: 200px; }
+    .price-label { font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: #15803d; }
+    .price-total { font-size: 1.45rem; font-weight: 800; color: #166534; line-height: 1.2; }
+    .price-sub { font-size: 0.78rem; color: #15803d; font-weight: 600; }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 18px 22px 0; }
+    .photo-item { position: relative; height: 195px; border-radius: 12px; overflow: hidden; background: #e2e8f0; border: 1px solid var(--border); }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.88)); color: #fff; padding: 18px 10px 8px; font-size: 0.76rem; font-weight: 500; }
+    .hotel-body { padding: 20px 22px 22px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 20px; }
+    .info-block h4, .contact-panel h4 { font-size: 0.94rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .combo-split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .combo-unit { background: var(--combo-bg); border: 1px solid var(--combo-border); border-radius: 12px; padding: 12px 14px; font-size: 0.84rem; }
+    .combo-unit h5 { font-size: 0.88rem; font-weight: 800; color: var(--combo-text); margin-bottom: 6px; }
+    .breakdown-list { list-style: none; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+    .breakdown-list li { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #ffffff; }
+    .breakdown-list li:last-child { border-bottom: none; }
+    .breakdown-list li.baby-row { background: #f0fdf4; }
+    .baby-box { background: #f0f9ff; border-left: 4px solid var(--primary); padding: 12px 14px; border-radius: 8px; font-size: 0.86rem; margin-bottom: 12px; }
+    .reviews-box { background: #f8fafc; border: 1px solid var(--border); padding: 12px 14px; border-radius: 10px; font-size: 0.84rem; color: var(--muted); }
+    .contact-panel { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+    .contact-list { list-style: none; font-size: 0.85rem; margin-bottom: 16px; }
+    .contact-list li { margin-bottom: 8px; word-break: break-word; }
+    .contact-list a { color: var(--primary-dark); font-weight: 600; }
+    .btn-group { display: flex; flex-direction: column; gap: 10px; }
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 14px; min-height: 44px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.15s ease; cursor: pointer; border: none; text-align: center; }
+    .btn-wa { background: var(--success); color: #ffffff; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25); }
+    .btn-wa:hover { background: var(--success-dark); }
+    .btn-wa-es { background: #0f766e; color: #ffffff; }
+    .btn-wa-es:hover { background: #115e59; }
+    .btn-maps { background: #ea4335; color: #ffffff; }
+    .btn-maps:hover { background: #c5221f; }
+    .btn-booking { background: #003b95; color: #ffffff; }
+    .btn-booking:hover { background: #002b6b; }
+    .btn-web { background: #e2e8f0; color: #0f172a; }
+    .btn-web:hover { background: #cbd5e1; }
+    .wa-tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .wa-tab-btn { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); background: #f8fafc; font-weight: 700; font-size: 0.86rem; cursor: pointer; color: var(--muted); }
+    .wa-tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+    .wa-template-box { background: #0f172a; color: #f8fafc; border-radius: 12px; padding: 16px; font-family: 'Inter', monospace; font-size: 0.86rem; white-space: pre-wrap; border: 1px solid #334155; overflow-x: auto; }
+    .copy-btn { background: var(--success); color: #fff; border: none; padding: 12px 20px; min-height: 46px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.9rem; margin-top: 12px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .copy-btn:hover { background: var(--success-dark); }
+    footer { text-align: center; margin-top: 32px; padding: 0 16px; color: var(--muted); font-size: 0.84rem; }
     @media (max-width: 920px) {
-      .hotel-body {
-        grid-template-columns: 1fr;
-      }
+      .hotel-body { grid-template-columns: 1fr; }
+      .combo-split-grid { grid-template-columns: 1fr; }
     }
-
-    .info-block h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .breakdown-list {
-      list-style: none;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
-
-    .breakdown-list li {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.86rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      background: #ffffff;
-    }
-
-    .breakdown-list li:last-child {
-      border-bottom: none;
-    }
-
-    .breakdown-list li.baby-row {
-      background: #f0fdf4;
-      font-weight: 600;
-    }
-
-    .baby-box {
-      background: #f0f9ff;
-      border-left: 4px solid var(--primary);
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      margin-bottom: 14px;
-    }
-
-    .reviews-box {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .contact-panel {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    .contact-list {
-      list-style: none;
-      font-size: 0.86rem;
-      margin-bottom: 16px;
-    }
-
-    .contact-list li {
-      margin-bottom: 8px;
-      word-break: break-word;
-    }
-
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-size: 0.86rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.15s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-wa {
-      background: #16a34a;
-      color: #ffffff;
-    }
-
-    .btn-wa:hover {
-      background: #15803d;
-    }
-
-    .btn-booking {
-      background: #003b95;
-      color: #ffffff;
-    }
-
-    .btn-booking:hover {
-      background: #002b6b;
-    }
-
-    .btn-web {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-
-    .btn-web:hover {
-      background: #cbd5e1;
-    }
-
-    /* WhatsApp Template Box */
-    .wa-template-box {
-      background: #0f172a;
-      color: #f8fafc;
-      border-radius: 12px;
-      padding: 20px;
-      font-family: 'Inter', monospace;
-      font-size: 0.9rem;
-      white-space: pre-wrap;
-      position: relative;
-      margin-top: 12px;
-      border: 1px solid #334155;
-    }
-
-    .copy-btn {
-      background: #22c55e;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.9rem;
-      margin-top: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .copy-btn:hover {
-      background: #16a34a;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 0.85rem;
+    @media (max-width: 768px) {
+      header { padding: 28px 16px 24px; }
+      .section-card { padding: 18px 16px; }
+      .hotel-header { padding: 16px; }
+      .hotel-price-box { text-align: left; width: 100%; }
+      .photo-grid { grid-template-columns: 1fr; padding: 14px 16px 0; }
+      .photo-item { height: 185px; }
+      .hotel-body { padding: 16px; }
+      .breakdown-list li { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .btn-row { grid-template-columns: 1fr; }
+      .copy-btn { width: 100%; }
+      .scroll-hint { display: block; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-container">
-      <div class="badge-top">INFORME AUTÓNOMO VALIDADO · TEMPORADA ALTA VERANO 2027</div>
-      <h1>Vacaciones Familiares en Brasil: 14 Opciones Validadas</h1>
+      <div class="badge-top">INFORME VALIDADO · VERANO EN BRASIL 2027</div>
+      <h1>Vacaciones Familiares en Brasil: 16 Opciones Validadas</h1>
       <p class="subtitle">
-        Investigación verificada desde la Isla de Florianópolis hasta Itapema (excluyendo Balneário Camboriú) con precios para <strong>18/01/2027 – 28/01/2027 (10 noches)</strong>, desayuno incluido, hasta 500 m del mar y cocina equipada para el bebé.
+        Desde la Isla de Florianópolis hasta Itapema (excluyendo Balneário Camboriú) · <strong>18/01/2027 al 28/01/2027 (10 noches)</strong> · Desayuno incluido · Hasta 500 m del mar · Cocina equipada para el bebé.
       </p>
+      <div class="lang-banner">
+        <span style="font-size:0.84rem; font-weight:600;">Idioma de nombres de habitaciones:</span>
+        <button class="lang-toggle-btn" id="toggleLangBtn" onclick="toggleOriginalTerms()">🇧🇷 Ver términos originales en portugués</button>
+      </div>
       <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Check-in / Check-out</div>
-          <div class="kpi-value">18/01/2027 – 28/01/2027 (10 noches)</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Grupo Familiar (4 Habitaciones)</div>
-          <div class="kpi-value">7 Adultos + 2 Niños + 1 Bebé (0 años)</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Presupuesto Máximo Total</div>
-          <div class="kpi-value">Hasta R$ 27.000 (Prom. &le; R$ 675/noche)</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Prioridad Bebé &amp; Régimen</div>
-          <div class="kpi-value">Cocina en Hab. 3 + Desayuno Incluido</div>
-        </div>
+        <div class="kpi-card"><div class="kpi-label">Fechas Exactas</div><div class="kpi-value">18/01/2027 – 28/01/2027 (10 noches)</div></div>
+        <div class="kpi-card"><div class="kpi-label">Grupo (4 Habitaciones)</div><div class="kpi-value">7 Adultos + 2 Niños + 1 Bebé (0 años)</div></div>
+        <div class="kpi-card"><div class="kpi-label">Presupuesto Tope Total</div><div class="kpi-value">Hasta R$ 27.000 (Prom. &le; R$ 675/noche)</div></div>
+        <div class="kpi-card"><div class="kpi-label">Prioridad Principal</div><div class="kpi-value">Cocina p/ Bebé en Hab. 3 + Desayuno</div></div>
       </div>
     </div>
   </header>
 
   <div class="container">
-
-    <!-- DISTRIBUCIÓN DE HABITACIONES -->
     <section class="section-card">
-      <h2 class="section-title">👨‍👩‍👧‍👦 Distribución Obligatoria del Grupo Familiar (4 Habitaciones)</h2>
-      <p class="section-desc">
-        Todas las cotizaciones y configuraciones de este informe respetan estrictamente que el bebé de 0 años se aloje junto a 2 adultos en la Habitación 3 con equipamiento para cocinarle (anafe/fogón, kitchenette, microondas y heladera).
-      </p>
+      <h2 class="section-title">👨‍👩‍👧‍👦 Distribución del Grupo Familiar (4 Habitaciones)</h2>
+      <p class="section-desc">Todas las opciones y combinaciones garantizan que el bebé de 0 años vaya en la <strong>Habitación 3 junto a 2 adultos</strong>, con cocina, minicocina o cocina de apoyo equipada en ese mismo alojamiento.</p>
       <div class="rooms-banner">
-        <div class="room-pill">
-          <h4>🛏️ Habitación 1 (Matrimonial)</h4>
-          <p><strong>2 adultos</strong> · 1 cama matrimonial (Queen/King o Box estándar) con aire acondicionado y desayuno.</p>
-        </div>
-        <div class="room-pill">
-          <h4>🛏️ Habitación 2 (Matrimonial)</h4>
-          <p><strong>2 adultos</strong> · 1 cama matrimonial (Queen/King o Box estándar) con aire acondicionado y desayuno.</p>
-        </div>
-        <div class="room-pill baby-highlight">
-          <h4>🍼 Habitación 3 (Matrimonial + Bebé 0 años)</h4>
-          <p><strong>2 adultos + 1 bebé (0 años)</strong> · Cama matrimonial + cuna/practicuna + <strong>cocina privada o copa baby equipada</strong>.</p>
-        </div>
-        <div class="room-pill">
-          <h4>👦👧 Habitación 4 (Triple Familiar)</h4>
-          <p><strong>1 adulto + 2 niños</strong> · 1 cama matrimonial + 1 cama individual (o 3 camas individuales / bicama).</p>
-        </div>
+        <div class="room-pill"><h4>🛏️ Habitación 1</h4><p><strong>2 adultos</strong> · Cama matrimonial + desayuno incluido.</p></div>
+        <div class="room-pill"><h4>🛏️ Habitación 2</h4><p><strong>2 adultos</strong> · Cama matrimonial + desayuno incluido.</p></div>
+        <div class="room-pill baby-highlight"><h4>🍼 Habitación 3 (Prioridad Bebé)</h4><p><strong>2 adultos + 1 bebé (0 años)</strong> · Cama matrimonial + cuna + <strong>cocina/minicocina</strong>.</p></div>
+        <div class="room-pill"><h4>👦👧 Habitación 4 (Triple)</h4><p><strong>1 adulto + 2 niños</strong> · 1 cama matrimonial + 1 individual (o 3 individuales).</p></div>
       </div>
     </section>
 
-    <!-- MENSAJE WHATSAPP EN PORTUGUÉS -->
     <section class="section-card" id="whatsapp-section">
-      <h2 class="section-title">💬 Mensaje Modelo en Portugués para Enviar Mañana por WhatsApp</h2>
+      <h2 class="section-title">💬 Mensaje Listo para Enviar Mañana por WhatsApp</h2>
       <p class="section-desc">
-        Siguiendo tu instrucción, <strong>no se envió ningún mensaje hoy</strong> para contactar mañana en horario comercial. Cada tarjeta de alojamiento tiene su botón directo <code>wa.me</code> con este mensaje personalizado precargado, o puedes copiarlo aquí con un clic:
+        Cada tarjeta tiene botones directos para abrir WhatsApp en <strong>Portugués (recomendado)</strong> o en <strong>Español</strong> con el mensaje adaptado a ese alojamiento. También puedes copiar la plantilla general aquí:
       </p>
-      <div class="wa-template-box" id="waText">Olá! Tudo bem? Gostaria de verificar a disponibilidade e solicitar uma cotação para uma reserva de grupo familiar para o período de 18/01/2027 a 28/01/2027 (10 diárias).
+      <div class="wa-tabs">
+        <button class="wa-tab-btn active" id="tabPt" onclick="switchWaTab('pt')">🇧🇷 En Portugués (Recomendado)</button>
+        <button class="wa-tab-btn" id="tabEs" onclick="switchWaTab('es')">🇦🇷 En Español</button>
+      </div>
+      <div class="wa-template-box" id="waTextPt">Olá! Tudo bem? Gostaria de verificar a disponibilidade e solicitar uma cotação para uma reserva de grupo familiar para o período de 18/01/2027 a 28/01/2027 (10 diárias).
 
-Precisamos de 4 acomodações simultâneas para 7 adultos, 2 crianças e 1 bebê (0 anos), distribuídas exatamente da seguinte forma:
+Precisamos de 4 acomodações simultâneas para 7 adultos, 2 crianças e 1 bebê (0 anos), distribuídas da seguinte forma:
 - Quarto 1: 2 adultos (1 cama de casal).
 - Quarto 2: 2 adultos (1 cama de casal).
 - Quarto 3: 2 adultos (1 cama de casal) + 1 bebê de 0 anos (FUNDAMENTAL ter cozinha equipada / kitchenette / fogão / micro-ondas para preparar a comida do bebê, além de berço se disponível).
@@ -668,188 +198,204 @@ Poderiam nos informar, por gentileza:
 3. Disponibilidade de estacionamento e condições de pagamento (PIX / transferência / cartão).
 
 Muito obrigado! Aguardo o retorno.</div>
-      <button class="copy-btn" onclick="copyWhatsAppText()">📋 Copiar mensaje en portugués</button>
-      <span id="copyFeedback" style="margin-left:12px; color:#16a34a; font-weight:700; display:none;">¡Copiado al portapapeles!</span>
+      <div class="wa-template-box" id="waTextEs" style="display:none;">¡Hola! ¿Cómo están? Quisiera consultar disponibilidad y solicitar una cotización para una reserva de grupo familiar del 18/01/2027 al 28/01/2027 (10 noches).
+
+Necesitamos 4 habitaciones simultáneas para 7 adultos, 2 niños y 1 bebé (0 años), distribuidas así:
+- Habitación 1: 2 adultos (1 cama matrimonial).
+- Habitación 2: 2 adultos (1 cama matrimonial).
+- Habitación 3: 2 adultos (1 cama matrimonial) + 1 bebé de 0 años (ES FUNDAMENTAL contar con cocina equipada / anafe / microondas para prepararle la comida al bebé, además de cuna si disponen).
+- Habitación 4: 1 adulto + 2 niños (habitación triple: 3 camas individuales o 1 matrimonial + 1 individual).
+
+¿Podrían informarnos por favor:
+1. Tarifa total final en Reales (R$) por las 4 habitaciones durante las 10 noches CON desayuno incluido y descuento por reserva directa de grupo familiar (nuestro presupuesto máximo total es de R$ 27.000).
+2. Confirmación exacta del equipamiento de cocina disponible para la Habitación 3 (del bebé).
+3. Disponibilidad de cochera/estacionamiento y formas de pago (PIX / transferencia / tarjeta).
+
+¡Muchas gracias! Quedo a la espera de su respuesta.</div>
+      <button class="copy-btn" onclick="copyWhatsAppText()">📋 Copiar mensaje visible</button>
+      <span id="copyFeedback" style="margin-left:10px; color:#16a34a; font-weight:700; display:none;">¡Copiado!</span>
     </section>
 
-    <!-- TABLA COMPARATIVA RESUMEN -->
-    <section class="section-card">
-      <h2 class="section-title">📊 Tabla Comparativa General (Ordenada de Mejor a Peor por Calificación y Reseñas)</h2>
-      <p class="section-desc">
-        Todas las tarifas están expresadas en Reales Brasileños (R$) por el paquete completo de <strong>4 habitaciones durante 10 noches (18/01/2027 al 28/01/2027) con desayuno incluido</strong> (tipo de cambio de referencia verificado: 1 BRL = 276,62 ARS).
-      </p>
+    <section class="section-card" id="ranking-table">
+      <h2 class="section-title">📊 Tabla Comparativa (Ordenada de Mejor a Peor Calificación)</h2>
+      <p class="section-desc">Todas las opciones cumplen con el tope de <strong>R$ 27.000</strong> (10 noches, 4 habitaciones, desayuno incluido), están a <strong>&le; 500 m del mar</strong> y garantizan equipamiento de cocina para el bebé en la Habitación 3. <em>Valores estimados de referencia en ARS: 1 BRL = 276,62 ARS.</em></p>
+      <div class="scroll-hint">👉 Desliza la tabla horizontalmente para ver todas las columnas</div>
       <div class="table-responsive">
         <table class="summary-table">
           <thead>
             <tr>
-              <th>Rank</th>
-              <th>Alojamiento / Combinación</th>
-              <th>Zona / Playa</th>
-              <th>Distancia al Mar</th>
-              <th>Calificación (Booking / Google)</th>
-              <th>Cocina para el Bebé (Hab. 3)</th>
-              <th>Total 10 Noches (4 Habs)</th>
-              <th>Contacto Rápido</th>
+              <th>#</th>
+              <th>Alojamiento / Combo</th>
+              <th>Zona y Playa</th>
+              <th>Dist. al Mar</th>
+              <th>Calificación</th>
+              <th>Cocina p/ Bebé (Hab. 3)</th>
+              <th>Total 10 Noches</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="rank-badge rank-top3">#1</span></td>
-              <td><strong><a href="#opt-1">Pousada Caminho do Bosque</a></strong></td>
-              <td>Canto Grande / Mariscal (Bombinhas)</td>
-              <td>350 m Mariscal / 500 m Canto Grande</td>
-              <td><strong>9,7</strong> Booking · <strong>4,9</strong> Google (252 res.)</td>
-              <td><span class="tag tag-kitchen">Kitchenette privada en las 4 habs</span></td>
-              <td><strong>R$ 25.700</strong><br><small>(R$ 642,50/noche prom.)</small></td>
-              <td><a href="https://wa.me/554734300823" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge rank-top3">1</span></td>
+              <td><a href="#opt-1">Pousada Caminho do Bosque</a></td>
+              <td>Bombinhas (Mariscal)</td>
+              <td>350 m</td>
+              <td><strong>9,7</strong> Booking · 4,9 Google</td>
+              <td><span class="tag tag-kitchen">Minicocina + cuna</span></td>
+              <td><strong>R$ 25.700</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge rank-top3">#2</span></td>
-              <td><strong><a href="#opt-2">Pousada Águas de 4 Ilhas (+ opción Vila do Centro)</a></strong></td>
-              <td>Quatro Ilhas / Centro (Bombinhas)</td>
-              <td>200–220 m de la arena</td>
-              <td><strong>9,7</strong> Booking · <strong>5,0</strong> Google (151 res.)</td>
-              <td><span class="tag tag-kitchen">Copa completa o Flat con cocina</span></td>
-              <td><strong>R$ 20.860 – R$ 22.360</strong><br><small>(R$ 521–559/noche prom.)</small></td>
-              <td><a href="https://wa.me/5547996888181" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge rank-top3">2</span></td>
+              <td><a href="#opt-2">COMBO: Águas de 4 Ilhas + Vila do Centro</a> <span class="tag tag-combo">Combo 250 m</span></td>
+              <td>Bombinhas (Quatro Ilhas / Centro)</td>
+              <td>200–220 m</td>
+              <td><strong>9,7 &amp; 9,0</strong> Booking</td>
+              <td><span class="tag tag-kitchen">Cocina privada + lavarropas</span></td>
+              <td><strong>R$ 22.360</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge rank-top3">#3</span></td>
-              <td><strong><a href="#opt-3">Apart Hotel Beira do Mar</a></strong></td>
-              <td>Canasvieiras (Florianópolis Norte)</td>
-              <td><span class="tag tag-beachfront">0–7 m (Pé na areia)</span></td>
-              <td><strong>9,4</strong> Booking · <strong>4,6</strong> Google (481 res.)</td>
-              <td><span class="tag tag-kitchen">Cocina completa en todas las unid.</span></td>
-              <td><strong>R$ 26.600</strong><br><small>(Combo familiar directo)</small></td>
-              <td><a href="https://wa.me/554832696650" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge rank-top3">3</span></td>
+              <td><a href="#opt-3">Apart Hotel Beira do Mar</a></td>
+              <td>Floripa Norte (Canasvieiras)</td>
+              <td><span class="tag tag-beachfront">0–7 m (Frente al mar)</span></td>
+              <td><strong>9,4</strong> Booking · 4,6 Google</td>
+              <td><span class="tag tag-kitchen">Cocina privada + cuna gratis</span></td>
+              <td><strong>R$ 26.600</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#4</span></td>
-              <td><strong><a href="#opt-4">Pousada Vila do Bosque</a></strong></td>
-              <td>Bombinhas Centro</td>
-              <td>400 m de Praia de Bombinhas</td>
-              <td><strong>9,4</strong> Booking · <strong>4,8</strong> Google (373 res.)</td>
-              <td><span class="tag tag-kitchen">Cocina completa con cooktop (Hab 3 y 4)</span></td>
-              <td><strong>R$ 21.400</strong><br><small>(R$ 535/noche prom.)</small></td>
-              <td><a href="https://wa.me/5547991778040" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">4</span></td>
+              <td><a href="#opt-4">Pousada Vila do Bosque</a></td>
+              <td>Bombinhas (Centro)</td>
+              <td>400 m</td>
+              <td><strong>9,4</strong> Booking · 4,8 Google</td>
+              <td><span class="tag tag-kitchen">Cocina completa + cuna</span></td>
+              <td><strong>R$ 21.400</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#5</span></td>
-              <td><strong><a href="#opt-5">Canto da Catarina Bombinhas</a></strong></td>
-              <td>Praia de Bombas (Bombinhas)</td>
-              <td>200 m de la playa de Bombas</td>
-              <td><strong>9,3</strong> Booking · <strong>4,8</strong> Google (749 res.)</td>
-              <td><span class="tag tag-kitchen">Cocina completa en las 4 suites</span></td>
-              <td><strong>R$ 24.880</strong><br><small>(R$ 622/noche prom.)</small></td>
-              <td><a href="https://wa.me/5547999699168" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">5</span></td>
+              <td><a href="#opt-5">Canto da Catarina Bombinhas</a></td>
+              <td>Bombinhas (Bombas)</td>
+              <td>200 m</td>
+              <td><strong>9,3</strong> Booking · 4,8 Google</td>
+              <td><span class="tag tag-kitchen">Cocina completa (4 suites)</span></td>
+              <td><strong>R$ 24.880</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#6</span></td>
-              <td><strong><a href="#opt-6">Pousada Mar do Leste</a></strong></td>
-              <td>Barra da Lagoa (Florianópolis Este)</td>
-              <td><span class="tag tag-beachfront">50 m de la arena</span></td>
-              <td><strong>9,3</strong> Booking · <strong>4,7</strong> Google (670 res.)</td>
-              <td><span class="tag tag-kitchen">Cocina privada en los 4 aptos</span></td>
-              <td><strong>R$ 21.800</strong><br><small>(R$ 545/noche prom.)</small></td>
-              <td><a href="https://wa.me/554832323209" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">6</span></td>
+              <td><a href="#opt-6">Pousada Mar do Leste</a></td>
+              <td>Floripa Este (Barra da Lagoa)</td>
+              <td><span class="tag tag-beachfront">50 m</span></td>
+              <td><strong>9,3</strong> Booking · 4,7 Google</td>
+              <td><span class="tag tag-kitchen">Cocina privada (4 deptos)</span></td>
+              <td><strong>R$ 21.800</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#7</span></td>
-              <td><strong><a href="#opt-7">Pousada Morada do Mar (Casa do Oscar)</a></strong></td>
-              <td>Governador Celso Ramos (próx. Palmas)</td>
-              <td>150 m de Praia do Antenor</td>
-              <td><strong>9,3</strong> Booking · <strong>4,9</strong> Google (304 res.)</td>
-              <td><span class="tag tag-kitchen">Apto con microondas + cocina común</span></td>
-              <td><strong>R$ 25.200</strong><br><small>(R$ 630/noche prom.)</small></td>
-              <td><a href="https://wa.me/5548991829387" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">7</span></td>
+              <td><a href="#opt-7">Pousada Morada do Mar (Casa do Oscar)</a></td>
+              <td>Gov. Celso Ramos</td>
+              <td>150 m</td>
+              <td><strong>9,3</strong> Booking · 4,9 Google</td>
+              <td><span class="tag tag-kitchen">Microondas + cocina común</span></td>
+              <td><strong>R$ 25.200</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#8</span></td>
-              <td><strong><a href="#opt-8">Combo: Pousada Vovô Valdir + Pousada Terra do Sol</a></strong></td>
-              <td>Meia Praia (Itapema)</td>
-              <td>300–450 m del mar (a 130 m entre sí)</td>
-              <td><strong>9,2 / 9,3</strong> Booking · <strong>4,6</strong> Google</td>
-              <td><span class="tag tag-kitchen">Flat con cocina privada (Hab 3)</span></td>
-              <td><strong>R$ 20.170</strong><br><small>(R$ 504/noche prom.)</small></td>
-              <td><a href="https://wa.me/5547999791795" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">8</span></td>
+              <td><a href="#opt-8">COMBO: Vovô Valdir + Terra do Sol</a> <span class="tag tag-combo">Combo 130 m</span></td>
+              <td>Itapema (Meia Praia)</td>
+              <td>300–450 m</td>
+              <td><strong>9,2 &amp; 9,3</strong> Booking</td>
+              <td><span class="tag tag-kitchen">Anafe 2 bocas + microondas</span></td>
+              <td><strong>R$ 20.170</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#9</span></td>
-              <td><strong><a href="#opt-9">La Alhambra Apart Hotel</a></strong></td>
-              <td>Cachoeira do Bom Jesus (Floripa Norte)</td>
-              <td><span class="tag tag-beachfront">0–50 m (Pé na areia)</span></td>
-              <td><strong>9,1</strong> Booking · <strong>4,6</strong> Google (226 res.)</td>
-              <td><span class="tag tag-kitchen">Cocina completa con horno en las 4</span></td>
-              <td><strong>R$ 26.305</strong><br><small>(R$ 657,63/noche directo)</small></td>
-              <td><a href="https://wa.me/554832848921" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">9</span></td>
+              <td><a href="#opt-9">La Alhambra Apart Hotel</a></td>
+              <td>Floripa Norte (Cachoeira)</td>
+              <td><span class="tag tag-beachfront">0–50 m (Frente al mar)</span></td>
+              <td><strong>9,1</strong> Booking · 4,6 Google</td>
+              <td><span class="tag tag-kitchen">Cocina c/ horno (4 deptos)</span></td>
+              <td><strong>R$ 26.305</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#10</span></td>
-              <td><strong><a href="#opt-10">Pousada Lozalti</a></strong></td>
-              <td>Barra da Lagoa (Florianópolis Este)</td>
-              <td>300 m de la playa</td>
-              <td><strong>9,1</strong> Booking · <strong>4,6</strong> Google (965 res.)</td>
-              <td><span class="tag tag-kitchen">Studio PB con cocina completa (Hab 3)</span></td>
-              <td><strong>R$ 22.500</strong><br><small>(R$ 562,50/noche prom.)</small></td>
-              <td><a href="https://wa.me/5548996790336" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">10</span></td>
+              <td><a href="#opt-10">Pousada Lozalti</a></td>
+              <td>Floripa Este (Barra da Lagoa)</td>
+              <td>300 m</td>
+              <td><strong>9,1</strong> Booking · 4,6 Google</td>
+              <td><span class="tag tag-kitchen">Cocina completa (PB)</span></td>
+              <td><strong>R$ 22.500</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#11</span></td>
-              <td><strong><a href="#opt-11">Complexo Hotel &amp; Pousada Natur Campeche</a></strong></td>
-              <td>Praia do Campeche (Florianópolis Sur)</td>
-              <td>150 m de Praia do Campeche</td>
-              <td><strong>9,1</strong> Booking · <strong>4,6</strong> Google (1.296 res.)</td>
-              <td><span class="tag tag-kitchen">Apto con cocina 4 hornallas + licuadora</span></td>
-              <td><strong>R$ 24.500</strong><br><small>(R$ 612,50/noche prom.)</small></td>
-              <td><a href="https://wa.me/5548991397113" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">11</span></td>
+              <td><a href="#opt-11">Complexo Hotel &amp; Pousada Natur Campeche</a></td>
+              <td>Floripa Sur (Campeche)</td>
+              <td>150 m</td>
+              <td><strong>9,1</strong> Booking · 4,6 Google</td>
+              <td><span class="tag tag-kitchen">Cocina 4 hornallas + horno</span></td>
+              <td><strong>R$ 24.500</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#12</span></td>
-              <td><strong><a href="#opt-12">Hotel Residencial Itapema Vacation Club</a></strong></td>
-              <td>Centro / Canto da Praia (Itapema)</td>
-              <td>150 m de la playa</td>
-              <td><strong>8,9</strong> Booking · <strong>4,5</strong> Google (1.252 res.)</td>
-              <td><span class="tag tag-kitchen">4 Aptos de 1 dorm con cocina completa</span></td>
-              <td><strong>R$ 26.400 – R$ 27.000</strong><br><small>(Paquete directo 4 aptos)</small></td>
-              <td><a href="https://wa.me/5547984477638" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">12</span></td>
+              <td><a href="#opt-12">Hotel Residencial Itapema Vacation Club</a></td>
+              <td>Itapema (Centro)</td>
+              <td>150 m</td>
+              <td><strong>8,9</strong> Booking · 4,5 Google</td>
+              <td><span class="tag tag-kitchen">Cocina a gas (4 deptos)</span></td>
+              <td><strong>R$ 26.600</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#13</span></td>
-              <td><strong><a href="#opt-13">Ingleses Park Hotel</a></strong></td>
-              <td>Praia dos Ingleses (Floripa Norte)</td>
-              <td><span class="tag tag-beachfront">30 m de la arena</span></td>
-              <td><strong>8,8</strong> Booking · <strong>4,6</strong> Google (4.778 res.)</td>
-              <td><span class="tag tag-kitchen">Mini cocina con cooktop en todas + cuna</span></td>
-              <td><strong>R$ 26.800</strong><br><small>(Combo 2 Aptos Familiares 2 dorms)</small></td>
-              <td><a href="https://wa.me/5548984212909" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">13</span></td>
+              <td><a href="#opt-13">Ingleses Park Hotel</a></td>
+              <td>Floripa Norte (Ingleses)</td>
+              <td><span class="tag tag-beachfront">30 m</span></td>
+              <td><strong>8,8</strong> Booking · 4,6 Google</td>
+              <td><span class="tag tag-kitchen">2 minicocinas + cuna gratis</span></td>
+              <td><strong>R$ 26.800</strong></td>
             </tr>
             <tr>
-              <td><span class="rank-badge">#14</span></td>
-              <td><strong><a href="#opt-14">Pousada do Capitão Floripa</a></strong></td>
-              <td>Novo Campeche (Florianópolis Sur)</td>
-              <td>100 m de la playa</td>
-              <td><strong>8,8</strong> Booking · <strong>4,5</strong> Google (945 res.)</td>
-              <td><span class="tag tag-kitchen">Apto Jardim con cocina americana (Hab 3)</span></td>
-              <td><strong>R$ 25.800</strong><br><small>(R$ 645/noche prom.)</small></td>
-              <td><a href="https://wa.me/5548991737935" target="_blank">WhatsApp</a></td>
+              <td><span class="rank-badge">14</span></td>
+              <td><a href="#opt-14">Praia Pousada Tatuíra</a></td>
+              <td>Floripa Norte (Ingleses)</td>
+              <td><span class="tag tag-beachfront">30–50 m</span></td>
+              <td><strong>8,8</strong> Booking · 4,4 Google</td>
+              <td><span class="tag tag-kitchen">Cocina compartida + frigobar</span></td>
+              <td><strong>R$ 26.146</strong></td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge">15</span></td>
+              <td><a href="#opt-15">Pousada do Capitão Floripa</a></td>
+              <td>Floripa Sur (Novo Campeche)</td>
+              <td><span class="tag tag-beachfront">&lt; 100 m</span></td>
+              <td><strong>8,8</strong> Booking · 4,5 Google</td>
+              <td><span class="tag tag-kitchen">Cocina americana en Hab. 3</span></td>
+              <td><strong>R$ 25.800</strong></td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge">16</span></td>
+              <td><a href="#opt-16">HANNA San Diego Apart Hotel</a></td>
+              <td>Floripa Norte (Canasvieiras)</td>
+              <td>350 m</td>
+              <td><strong>8,4</strong> Decolar · 8,2 Booking</td>
+              <td><span class="tag tag-kitchen">Cocina equipada + cuna gratis</span></td>
+              <td><strong>R$ 23.900</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- FILTROS INTERACTIVOS POR ZONA -->
     <div class="filters-bar">
-      <div class="filter-group">
-        <button class="filter-btn active" onclick="filterCards('all', this)">Todas las Opciones (14)</button>
-        <button class="filter-btn" onclick="filterCards('bombinhas', this)">Bombinhas &amp; Gov. Celso Ramos (5)</button>
-        <button class="filter-btn" onclick="filterCards('floripa-norte', this)">Florianópolis Norte (3)</button>
-        <button class="filter-btn" onclick="filterCards('floripa-este-sur', this)">Florianópolis Este y Sur (4)</button>
-        <button class="filter-btn" onclick="filterCards('itapema', this)">Itapema (2)</button>
+      <div class="filters-inner">
+        <div class="filter-group">
+          <button class="filter-btn active" onclick="filterCards('all', this)">Todas (16)</button>
+          <button class="filter-btn" onclick="filterCards('combo', this)">Combos Agrupados (2)</button>
+          <button class="filter-btn" onclick="filterCards('bombinhas', this)">Bombinhas &amp; Gov. Celso Ramos (5)</button>
+          <button class="filter-btn" onclick="filterCards('floripa-norte', this)">Florianópolis Norte (5)</button>
+          <button class="filter-btn" onclick="filterCards('floripa-sur', this)">Florianópolis Este y Sur (4)</button>
+          <button class="filter-btn" onclick="filterCards('itapema', this)">Itapema (2)</button>
+        </div>
       </div>
     </div>
 
-    <!-- DETALLE DE LAS 14 OPCIONES -->
     <div id="cards-container">
 
       <!-- OPCIÓN 1 -->
@@ -857,918 +403,584 @@ Muito obrigado! Aguardo o retorno.</div>
         <div class="hotel-header">
           <div class="hotel-title-group">
             <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#1 MEJOR CALIFICADA (9,7 BOOKING / 4,9 GOOGLE)</span>
-              <span class="tag tag-zone">Canto Grande / Praia do Mariscal · Bombinhas</span>
-              <span class="tag tag-kitchen">Kitchenette Privada en las 4 Habs</span>
+              <span class="hotel-rank-pill">#1 Mejor Calificación</span>
+              <span class="tag tag-zone">Bombinhas · Mariscal / Canto Grande</span>
+              <span class="tag tag-kitchen">Minicocina en las 4 + cuna</span>
             </div>
             <h3 class="hotel-name">Pousada Caminho do Bosque</h3>
-            <p class="hotel-address">📍 Rua Amendoeira, 180 (esq. Rua Cabiúna, 8), Canto Grande, Bombinhas - SC · <strong>A 350 m de Praia do Mariscal y 500 m de Canto Grande (Mar de Dentro)</strong></p>
+            <p class="hotel-address">📍 Rua Amendoeira, 180, Canto Grande, Bombinhas - SC · <strong>350 m de Playa de Mariscal</strong> y 500 m de Canto Grande (aguas sin olas).</p>
           </div>
           <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
+            <div class="price-label">Total 4 Hab. · 10 Noches</div>
             <div class="price-total">R$ 25.700</div>
-            <div class="price-sub">Prom. R$ 642,50/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://q-xx.bstatic.com/xdata/images/hotel/1200x630/606054062.jpg?k=e0f12162338ae1c0a7f1dc7f4ec680bad4a9903ac451978c5e11631ef99f8ff0&o=" alt="Piscina climatizada y edificio de Pousada Caminho do Bosque" loading="lazy">
-            <div class="photo-caption">Piscina climatizada y fachada moderna (con ascensor)</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://www.pousadacaminhodobosque.com.br/content/storyteller/media/gallery-storytelling-sobre-0.1734221998.webp" alt="Instalaciones exteriores de Pousada Caminho do Bosque" loading="lazy">
-            <div class="photo-caption">Instalaciones nuevas entre Mariscal y Canto Grande</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://pousadacaminhodobosque.com.br/content/navbar/media/atividades-oficial-3.1732509919.webp" alt="Entorno de playa en Canto Grande y Mariscal" loading="lazy">
-            <div class="photo-caption">Acceso a pie a Mariscal (olas) y Canto Grande (sin olas)</div>
+            <div class="price-sub">Prom. R$ 642,50/noche · Desayuno incluido</div>
           </div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas (Reserva Directa)</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Quarto Duplo Standard (24 m², cama matrimonial + kitchenette)</span> <strong>R$ 610/noche (R$ 6.100)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Quarto Duplo Standard (24 m², cama matrimonial + kitchenette)</span> <strong>R$ 610/noche (R$ 6.100)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Quarto Família c/ Varanda / Superior (32 m², matrimonial + cuna + cocina)</span> <strong>R$ 660/noche (R$ 6.600)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Quarto Triplo Standard (27 m², 1 matrimonial + 1 indiv. o 3 individuales)</span> <strong>R$ 690/noche (R$ 6.900)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Habitación Doble Estándar" data-pt="Quarto Duplo Standard">Habitación Doble Estándar</span> (25 m², matrimonial)</span><span><strong>R$ 610/n</strong> · R$ 6.100</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Habitación Doble Estándar" data-pt="Quarto Duplo Standard">Habitación Doble Estándar</span> (25 m², matrimonial)</span><span><strong>R$ 610/n</strong> · R$ 6.100</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Habitación Familiar con Balcón" data-pt="Quarto Família com Varanda">Habitación Familiar con Balcón</span> (31–35 m², cuna a pedido)</span><span><strong>R$ 660/n</strong> · R$ 6.600</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Habitación Triple Estándar" data-pt="Quarto Triplo Standard">Habitación Triple Estándar</span> (3 individuales o 1 mat. + 1 ind.)</span><span><strong>R$ 690/n</strong> · R$ 6.900</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> Todas las habitaciones cuentan con kitchenette privada equipada con microondas, pava eléctrica, cafetera, frigobar, lavavajillas, bacha y utensilios (y las unidades Familiares/Superiores suman cocina americana completa y heladera grande). Cuna disponible a pedido.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,7/10 Booking [145 res.] · 4,9/5 Google [107 res.]):</strong> Puntaje casi perfecto en Limpieza (9,9) y Personal (9,9). Destacan que es un edificio nuevo con ascensor (muy cómodo para cochecito de bebé), piscina climatizada, Espaço Kids y desayuno buffet casero.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Todas las unidades tienen minicocina (<span class="i18n-term" data-es="cocina compacta" data-pt="kitchenette">cocina compacta</span>) con microondas, pava eléctrica, cafetera, frigobar, vajilla y cuna disponible bajo pedido.</div>
+            <div class="reviews-box">⭐ <strong>9,7/10 Booking</strong> (145 reseñas · Limpieza 9,9 · Personal 9,9) · <strong>4,9/5 Google</strong> (107 reseñas). Huéspedes destacan instalaciones nuevas, silencio nocturno, ascensor y desayuno buffet casero.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Amendoeira, 180, Canto Grande, Bombinhas - SC, CEP 88215-000</li>
-              <li><strong>Teléfono / WhatsApp 24h:</strong> +55 (47) 3430-0823</li>
-              <li><strong>Email:</strong> <a href="mailto:contato@pousadacaminhodobosque.com.br">contato@pousadacaminhodobosque.com.br</a></li>
-              <li><strong>Web Oficial:</strong> <a href="https://pousadacaminhodobosque.com.br/" target="_blank">pousadacaminhodobosque.com.br</a></li>
-            </ul>
+            <div>
+              <h4>📞 Contacto y Ubicación</h4>
+              <ul class="contact-list">
+                <li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffehdedaaicd"></span></li>
+                <li><strong>Ubicación:</strong> Istmo Mariscal / Canto Grande, Bombinhas</li>
+              </ul>
+            </div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/554734300823?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20uma%20cota%C3%A7%C3%A3o%20para%204%20quartos%20na%20Pousada%20Caminho%20do%20Bosque%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3%20%283%20duplos%20casal%2C%20sendo%201%20com%20beb%C3%AA%20de%200%20anos%20e%20cozinha%2C%20mais%201%20triplo%29." target="_blank">💬 Abrir WhatsApp (+55 47 3430-0823)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-caminho-do-bosque.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://pousadacaminhodobosque.com.br/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row">
+                <a class="btn btn-wa wa-auto" href="#" data-k="ffehdedaaicd" data-hotel="Pousada Caminho do Bosque" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a>
+                <a class="btn btn-wa-es wa-auto" href="#" data-k="ffehdedaaicd" data-hotel="Pousada Caminho do Bosque" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a>
+              </div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Caminho+do+Bosque+Rua+Amendoeira+180+Bombinhas+SC" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row">
+                <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-caminho-do-bosque.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a>
+                <a class="btn btn-web" href="https://pousadacaminhodobosque.com.br/" target="_blank" rel="noopener">Web Oficial</a>
+              </div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 2 -->
-      <article class="hotel-card" id="opt-2" data-zone="bombinhas">
+      <!-- #2 COMBO -->
+      <article class="hotel-card combo-card" id="opt-2" data-zone="bombinhas combo">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#2 CALIFICACIÓN 9,7 BOOKING / 5,0 GOOGLE</span>
-              <span class="tag tag-zone">Quatro Ilhas &amp; Bombinhas Centro</span>
-              <span class="tag tag-kitchen">Opción Única o Combinada a 200 m del Mar</span>
-            </div>
-            <h3 class="hotel-name">Pousada Águas de 4 Ilhas (o combinada con Vila do Centro Apart Hotel)</h3>
-            <p class="hotel-address">📍 Rua Ilha Marajó, 26, Quatro Ilhas, Bombinhas - SC · <strong>A 220 m reales de Praia de Quatro Ilhas y 300 m del Centro</strong></p>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#2</span><span class="tag tag-combo">COMBO AGRUPADO (A 250 m / 3 min a pie)</span><span class="tag tag-zone">Bombinhas · Quatro Ilhas y Centro</span></div>
+            <h3 class="hotel-name">Pousada Águas de 4 Ilhas + Vila do Centro Apart Hotel</h3>
+            <p class="hotel-address">📍 Agrupación a 3 minutos caminando: 3 habitaciones en Quatro Ilhas (220 m del mar) + Hab. 3 con cocina privada completa y lavarropas en Centro (200 m del mar). <em>También pueden alojarse las 4 en Águas de 4 Ilhas por R$ 20.860 usando su cocina compartida.</em></p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 20.860</div>
-            <div class="price-sub">O R$ 22.360 combinando Flat privado</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/632004472.jpg?k=e9a6bae8b4726418adacb00fe440c4c6eab54522c3a2d6503d332fc9e26ad020&o=" alt="Habitación luminosa con balcón en Pousada Águas de 4 Ilhas" loading="lazy">
-            <div class="photo-caption">Suíte luminosa con balcón en Pousada Águas de 4 Ilhas</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://irp.cdn-website.com/9970715a/dms3rep/multi/opt/b6a4b63607534d2fbb5423cc222d6235-640w.jpeg" alt="Interior de habitación en Pousada Águas de 4 Ilhas" loading="lazy">
-            <div class="photo-caption">Instalaciones modernas e impecables</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/907906387.jpg?k=969d2c97b61c25189e13f87e813b7a9802ae627357639f97adeee751c389cbd3&o=" alt="Vila do Centro Apart Hotel en Bombinhas" loading="lazy">
-            <div class="photo-caption">Vila do Centro Apart Hotel (opción combinada con cocina y lavarropas)</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total Combo · 10 Noches</div><div class="price-total">R$ 22.360</div><div class="price-sub">Prom. R$ 559/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <div class="combo-split-grid">
+              <div class="combo-unit"><h5>🏨 Alojamiento A: Pousada Águas de 4 Ilhas</h5><p><strong>Hab. 1, 2 y 4</strong> · Rua Ilha Marajó, 26 (220 m de Praia de Quatro Ilhas). Nota <strong>9,7/10 Booking</strong> · <strong>5,0/5 Google</strong>. Incluye desayuno buffet, sombrillas, reposeras y cocina compartida.</p></div>
+              <div class="combo-unit"><h5>🏢 Alojamiento B: Vila do Centro Apart Hotel</h5><p><strong>Hab. 3 (Bebé)</strong> · Rua Merluza, 51 (200 m de Praia de Bombinhas, a 250 m del Alojamiento A). Nota <strong>9,0/10 Booking</strong> · <strong>4,6/5 Google</strong>. Cocina privada completa, lavarropas y espacio kids.</p></div>
+            </div>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte Standard Térrea en Águas de 4 Ilhas (cama Queen Size)</span> <strong>R$ 483/noche (R$ 4.830)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte Standard Térrea en Águas de 4 Ilhas (cama Queen Size)</span> <strong>R$ 483/noche (R$ 4.830)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Suíte Vista Mar en Águas de 4 Ilhas (R$ 530/n) <em>o Flat con cocina en Vila do Centro (R$ 680/n)</em></span> <strong>R$ 5.300 a R$ 6.800</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Suíte c/ Hidromasaje y Balcón (1 cama Queen + 1 cama individual)</span> <strong>R$ 590/noche (R$ 5.900)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos — Águas de 4 Ilhas):</strong> <span class="i18n-term" data-es="Suite Estándar Planta Baja" data-pt="Suíte Standard Térrea">Suite Estándar Planta Baja</span> (cama Queen)</span><span><strong>R$ 483/n</strong> · R$ 4.830</span></li>
+              <li><span><strong>Hab. 2 (2 adultos — Águas de 4 Ilhas):</strong> <span class="i18n-term" data-es="Suite Estándar Planta Baja" data-pt="Suíte Standard Térrea">Suite Estándar Planta Baja</span> (cama Queen)</span><span><strong>R$ 483/n</strong> · R$ 4.830</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé — Vila do Centro):</strong> <span class="i18n-term" data-es="Depto 30 m² con Cocina Privada" data-pt="Flat 30 m² com Cozinha Privativa">Depto 30 m² con Cocina Privada</span></span><span><strong>R$ 680/n</strong> · R$ 6.800</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños — Águas de 4 Ilhas):</strong> <span class="i18n-term" data-es="Suite con Hidromasaje" data-pt="Suíte com Hidromassagem">Suite con Hidromasaje</span> (mat. + aux.)</span><span><strong>R$ 590/n</strong> · R$ 5.900</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> Pousada Águas de 4 Ilhas tiene una <strong>copa/cocina compartida completa y moderna</strong> para huéspedes (con anafe, microondas, heladera y utensilios) más frigobar en las suites. Si prefieren cocina privada exclusiva dentro del cuarto para la Hab. 3, pueden alojar a la pareja con el bebé a 3 minutos a pie en un Flat de 30 m² de <strong>Vila do Centro Apart Hotel</strong> (Rua Merluza, 51, a 200 m de la playa, con anafe de 2 bocas, heladera, microondas y lavarropas propio).
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,7/10 Booking · 5,0/5 Google):</strong> Los huéspedes destacan la limpieza impecable (9,7), el préstamo gratuito de reposeras y sombrillas, el desayuno buffet artesanal y la practicidad de su cocina común.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Vila do Centro incluye anafe de 2 bocas, heladera, microondas, pava eléctrica, ollas y lavarropas en Hab. 3. Águas de 4 Ilhas también tiene cocina compartida equipada.</div>
+            <div class="reviews-box">⭐ Reseñas destacan el edificio flamante de Águas de 4 Ilhas, el desayuno casero (8 a 10 h) y el equipamiento completo de Vila do Centro para familias.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Águas de 4 Ilhas:</strong> Rua Ilha Marajó, 26, Quatro Ilhas · Tel: +55 (47) 3430-0214 · WhatsApp: +55 47 99688-8181 · Email: <a href="mailto:reservas@aguasde4ilhas.com.br">reservas@aguasde4ilhas.com.br</a></li>
-              <li><strong>Vila do Centro Apart Hotel:</strong> Rua Merluza, 51, Centro · WhatsApp: +55 47 99907-8511 · Email: <a href="mailto:reservas@viladocentroaparthotel.com">reservas@viladocentroaparthotel.com</a></li>
-            </ul>
+            <div><h4>📞 Contactos de Ambos Alojamientos</h4><ul class="contact-list"><li><strong>Águas de 4 Ilhas:</strong> <span class="ph-auto" data-k="ffehjjgiiibib"></span></li><li><strong>Vila do Centro Apart:</strong> <span class="ph-auto" data-k="ffehjjjahifbb"></span></li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5547996888181?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20cota%C3%A7%C3%A3o%20para%204%20quartos%20na%20Pousada%20%C3%81guas%20de%204%20Ilhas%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3." target="_blank">💬 WhatsApp Águas 4 Ilhas</a>
-              <a class="btn btn-wa" href="https://wa.me/5547999078511" target="_blank">💬 WhatsApp Vila do Centro</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-aguas-de-4-ilhas.pt-br.html" target="_blank">🔗 Booking.com</a>
-              <a class="btn btn-web" href="https://www.aguasde4ilhas.com.br/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjjgiiibib" data-hotel="Pousada Águas de 4 Ilhas" data-lang="pt" target="_blank" rel="noopener">💬 WA Águas 4I (PT)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjjgiiibib" data-hotel="Pousada Águas de 4 Ilhas" data-lang="es" target="_blank" rel="noopener">💬 WA Águas 4I (ES)</a></div>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjjjahifbb" data-hotel="Vila do Centro Apart Hotel" data-lang="pt" target="_blank" rel="noopener">💬 WA Vila Centro (PT)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjjjahifbb" data-hotel="Vila do Centro Apart Hotel" data-lang="es" target="_blank" rel="noopener">💬 WA Vila Centro (ES)</a></div>
+              <div class="btn-row"><a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Aguas+de+4+Ilhas+Rua+Ilha+Marajo+26+Bombinhas+SC" target="_blank" rel="noopener">📍 Maps Águas 4I</a><a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Vila+do+Centro+Apart+Hotel+Rua+Merluza+51+Bombinhas+SC" target="_blank" rel="noopener">📍 Maps Vila Centro</a></div>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-aguas-de-4-ilhas.pt-br.html" target="_blank" rel="noopener">Booking Águas 4I</a><a class="btn btn-booking" href="https://www.booking.com/hotel/br/vila-do-centro-apart.pt-br.html" target="_blank" rel="noopener">Booking Vila Centro</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 3 -->
+      <!-- #3 -->
       <article class="hotel-card" id="opt-3" data-zone="floripa-norte">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#3 PÉ NA AREIA (9,4 BOOKING · 9,9 UBICACIÓN)</span>
-              <span class="tag tag-beachfront">0 a 7 m de la Arena (Salida Directa)</span>
-              <span class="tag tag-kitchen">Cocina Completa en Todas las Unidades</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#3</span><span class="tag tag-beachfront">0–7 m (Frente al Mar)</span><span class="tag tag-zone">Florianópolis Norte · Canasvieiras</span><span class="tag tag-kitchen">Cocina privada + cuna gratis</span></div>
             <h3 class="hotel-name">Apart Hotel Beira do Mar</h3>
-            <p class="hotel-address">📍 Rua das Flores, 569, Canasvieiras, Florianópolis - SC · <strong>Literalmente sobre la arena (0 a 7 m del mar calmo de Canasvieiras)</strong></p>
+            <p class="hotel-address">📍 Rua das Flores, 569, Canasvieiras, Florianópolis - SC · <strong>Sobre la arena (0–7 metros)</strong> con salida directa de la piscina a la playa.</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total Grupo · 10 Noches</div>
-            <div class="price-total">R$ 26.600</div>
-            <div class="price-sub">Combo Familiar Directo · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/336631628.jpg?k=b8ec6f059deb4be82aa4804e4b751e839f640fdda232f45cb3b85acf657ba16d&o=" alt="Salida directa a la playa desde la piscina de Apart Hotel Beira do Mar" loading="lazy">
-            <div class="photo-caption">Piscina con salida directa a la arena de Canasvieiras (0 m)</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://www.beiradomar.com/imagens/20240917_1253411727722546.jpg" alt="Interior de apartamento equipado en Apart Hotel Beira do Mar" loading="lazy">
-            <div class="photo-caption">Interior de departamento con cocina privada completa</div>
-          </div>
-          <div class="photo-item">
-            <img src="http://www.beiradomar.com/images/familia.jpg" alt="Jardín frente al mar en Apart Hotel Beira do Mar" loading="lazy">
-            <div class="photo-caption">Sector residencial tranquilo frente a la Isla del Francés</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total Combo Familiar · 10 Noches</div><div class="price-total">R$ 26.600</div><div class="price-sub">Prom. R$ 665/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución Inteligente y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Unidades y Tarifas (Reserva Directa Grupal)</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos) + Hab. 4 (1 adulto + 2 niños):</strong> 1 Apto Familiar de 2 Dormitorios Privados frente al mar (55 m²: Dorm 1 matrimonial + Dorm 2 con 3 camas indiv.)</span> <strong>R$ 1.220/noche (R$ 12.200)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> 1 Estudio Matrimonial Vista Jardín con cocina (22 m², 1 cama doble)</span> <strong>R$ 700/noche (R$ 7.000)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> 1 Estudio Superior Vista Mar con cocina completa + cuna gratis (30 m², cama matrimonial)</span> <strong>R$ 740/noche (R$ 7.400)</strong></li>
+              <li><span><strong>Hab. 1 + Hab. 4 (2 ad. + 1 ad. y 2 niños):</strong> <span class="i18n-term" data-es="Depto Familiar 2 Dormitorios Frente al Mar" data-pt="Apartamento 2 Quartos Familiar Frente ao Mar">Depto Familiar 2 Dormitorios Frente al Mar</span> (55 m², 2 cuartos: 1 mat. + 3 ind.)</span><span><strong>R$ 1.220/n</strong> · R$ 12.200</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Estudio Superior Vista Jardín" data-pt="Studio Superior Vista ao Fundo">Estudio Superior Vista Jardín</span> (22 m², matrimonial)</span><span><strong>R$ 700/n</strong> · R$ 7.000</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Estudio Superior Vista Mar" data-pt="Studio Superior Vista ao Mar">Estudio Superior Vista Mar</span> (30 m², cocina + cuna gratis)</span><span><strong>R$ 740/n</strong> · R$ 7.400</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> El 100% de las unidades posee <strong>cocina privada completa</strong> (heladera, cocina con horno, anafe, microondas, cafetera, vajilla y parrilla en el balcón) más <strong>cuna sin cargo a pedido</strong>. Desayuno continental servido directamente en cada unidad.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,4/10 Booking · 4,6/5 Google [400 res.]):</strong> Atendido por sus dueños rioplatenses (familias García y Bianchino), ubicado en el extremo más limpio, tranquilo y familiar de Canasvieiras, con mar sin olas ideal para un bebé de menos de 1 año.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Todas las unidades tienen cocina privada completa (heladera, horno, anafe, microondas, cafetera, comedor y parrilla) + cuna gratis a pedido.</div>
+            <div class="reviews-box">⭐ <strong>9,4/10 Booking</strong> (Ubicación 9,9 · Limpieza 9,6 · Personal 9,6) · <strong>4,6/5 Google</strong> (400 reseñas). Atendido por dueños argentinos/uruguayos; desayuno continental servido en la habitación.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua das Flores, 569, Canasvieiras, Florianópolis - SC, CEP 88054-300</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (48) 3269-6650</li>
-              <li><strong>Email:</strong> <a href="mailto:info@beiradomar.com">info@beiradomar.com</a></li>
-              <li><strong>Web Oficial:</strong> <a href="http://www.beiradomar.com/" target="_blank">beiradomar.com</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeidcgjggfa"></span></li><li><strong>Playa:</strong> Sector más tranquilo de Canasvieiras</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/554832696650?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20cota%C3%A7%C3%A3o%20direta%20para%20nosso%20grupo%20familiar%20%287%20adultos%2C%202%20crian%C3%A7as%20e%201%20beb%C3%AA%20de%200%20anos%29%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20noites%29%20no%20Apart%20Hotel%20Beira%20do%20Mar." target="_blank">💬 Abrir WhatsApp (+55 48 3269-6650)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/apart-beira-do-mar.es-ar.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="http://www.beiradomar.com/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeidcgjggfa" data-hotel="Apart Hotel Beira do Mar" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeidcgjggfa" data-hotel="Apart Hotel Beira do Mar" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Apart+Hotel+Beira+do+Mar+Rua+das+Flores+569+Canasvieiras+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/apart-beira-do-mar.es-ar.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="http://www.beiradomar.com/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 4 -->
+      <!-- #4 -->
       <article class="hotel-card" id="opt-4" data-zone="bombinhas">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#4 CALIFICACIÓN 9,4 BOOKING / 4,8 GOOGLE</span>
-              <span class="tag tag-zone">Bombinhas Centro</span>
-              <span class="tag tag-kitchen">Cocina Completa en Suíte Master + Microondas en Todas</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#4</span><span class="tag tag-zone">Bombinhas · Centro</span><span class="tag tag-kitchen">Cocina completa + cuna gratis</span></div>
             <h3 class="hotel-name">Pousada Vila do Bosque</h3>
-            <p class="hotel-address">📍 Rua Merluza, 430, Centro, Bombinhas - SC · <strong>A 400 m planos de la Praia de Bombinhas (mar sin olas)</strong></p>
+            <p class="hotel-address">📍 Rua Merluza, 430, Centro, Bombinhas - SC · <strong>400 m a pie de Playa de Bombinhas</strong> (terreno plano).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 21.400</div>
-            <div class="price-sub">Prom. R$ 535/noche · Ahorras R$ 5.600</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://images.trvl-media.com/lodging/4000000/3730000/3720800/3720747/456a13dc.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Vista aérea de Pousada Vila do Bosque y sus 2 piscinas" loading="lazy">
-            <div class="photo-caption">Complejo arbolado con 2 piscinas en el corazón de Bombinhas</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/265894403.jpg?k=1ce413df71e55f29a8712d95793018090ac4e40cb120e9635b83be7fb4e6d0a7&o=" alt="Piscina y jardines de Pousada Vila do Bosque" loading="lazy">
-            <div class="photo-caption">Piscinas adultos y niños rodeadas de naturaleza</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://irp.cdn-website.com/ca91e358/dms3rep/multi/opt/Su%C3%ADte+Luxo+%282%29-432w.jpg" alt="Interior de Suíte Luxo en Pousada Vila do Bosque" loading="lazy">
-            <div class="photo-caption">Interior de Suíte con balcón y equipamiento</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Hab. · 10 Noches</div><div class="price-total">R$ 21.400</div><div class="price-sub">Prom. R$ 535/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte Luxo (25 m², cama Queen Size, microondas, frigobar y pava eléctrica)</span> <strong>R$ 480/noche (R$ 4.800)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte Luxo (25 m², cama Queen Size, microondas, frigobar y pava eléctrica)</span> <strong>R$ 480/noche (R$ 4.800)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Suíte Master (40 m², 3 ambientes, dormitorio matrimonial + cuna gratis + cocina completa)</span> <strong>R$ 560/noche (R$ 5.600)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Apartamento Luxo (45 m², dormitorio matrimonial + bicama para 2 niños en sala + cocina completa)</span> <strong>R$ 620/noche (R$ 6.200)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Lujo" data-pt="Suíte Luxo">Suite Lujo</span> (25 m², cama Queen, microondas)</span><span><strong>R$ 480/n</strong> · R$ 4.800</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Lujo" data-pt="Suíte Luxo">Suite Lujo</span> (25 m², cama Queen, microondas)</span><span><strong>R$ 480/n</strong> · R$ 4.800</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Suite Principal (3 ambientes)" data-pt="Suíte Master">Suite Principal (3 ambientes)</span> (40 m², cocina completa + cuna)</span><span><strong>R$ 560/n</strong> · R$ 5.600</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Departamento Lujo" data-pt="Apartamento Luxo">Departamento Lujo</span> (45 m², mat. + bicama + cocina)</span><span><strong>R$ 620/n</strong> · R$ 6.200</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> La <em>Suíte Master</em> (Hab. 3) y el <em>Apartamento Luxo</em> (Hab. 4) tienen <strong>cocina privada completa con anafe cooktop, microondas, frigobar, bacha y vajilla completa</strong>, además de cuna sin cargo a pedido y mosquiteros.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,4/10 Booking [Personal 10,0] · 4,8/5 Google [266 res.]):</strong> Elogian el desayuno "5 estrelas" (se puede pedir en el balcón de la habitación sin costo extra), el silencio por la noche para que duerma el bebé y la cercanía a la playa central de Bombinhas.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Hab. 3 y Hab. 4 cuentan con cocina completa privada (anafe cooktop, microondas, frigobar, bacha y vajilla), cuna sin cargo y mosquiteros. Hab. 1 y 2 tienen microondas y pava eléctrica.</div>
+            <div class="reviews-box">⭐ <strong>9,4/10 Booking</strong> (107 reseñas · Personal 10,0 · Limpieza 9,6) · <strong>4,8/5 Google</strong> (266 reseñas). Destacan el desayuno servido en el salón o balcón y la tranquilidad sin ruidos nocturnos.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Merluza, 430, Centro, Bombinhas - SC, CEP 88215-000</li>
-              <li><strong>Teléfono fijo:</strong> +55 (47) 3393-7281 / +55 (47) 3369-0024</li>
-              <li><strong>WhatsApp directo:</strong> +55 47 99177-8040</li>
-              <li><strong>Email:</strong> <a href="mailto:reservas@viladobosque.com.br">reservas@viladobosque.com.br</a></li>
-              <li><strong>Web Oficial:</strong> <a href="https://www.viladobosque.com.br/" target="_blank">viladobosque.com.br</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp:</strong> <span class="ph-auto" data-k="ffehjjbhhaaea"></span></li><li><strong>Zona:</strong> Centro de Bombinhas (terreno plano)</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5547991778040?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20para%204%20acomoda%C3%A7%C3%B5es%20na%20Pousada%20Vila%20do%20Bosque%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%282%20Su%C3%ADtes%20Luxo%20casal%2C%201%20Su%C3%ADte%20Master%20casal%20%2B%20beb%C3%AA%20com%20ber%C3%A7o%20e%20cozinha%2C%20e%201%20Apartamento%20Luxo%20para%201%20adulto%20%2B%202%20crian%C3%A7as%29." target="_blank">💬 Abrir WhatsApp (+55 47 99177-8040)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-vila-do-bosque.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://www.viladobosque.com.br/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjjbhhaaea" data-hotel="Pousada Vila do Bosque" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjjbhhaaea" data-hotel="Pousada Vila do Bosque" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Vila+do+Bosque+Rua+Merluza+430+Bombinhas+SC" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-vila-do-bosque.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://www.viladobosque.com.br/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 5 -->
+      <!-- #5 -->
       <article class="hotel-card" id="opt-5" data-zone="bombinhas">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#5 CALIFICACIÓN 9,3 BOOKING / 4,8 GOOGLE</span>
-              <span class="tag tag-zone">Praia de Bombas · Bombinhas</span>
-              <span class="tag tag-kitchen">Cocina Privada Completa en las 4 Suites</span>
-            </div>
-            <h3 class="hotel-name">Canto da Catarina Bombinhas (Residencial Bella Catarina)</h3>
-            <p class="hotel-address">📍 Rua Cardeal, 239 (esq. Rua Cisne), Bombas, Bombinhas - SC · <strong>A 200 m reales de la arena de Praia de Bombas</strong></p>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#5</span><span class="tag tag-zone">Bombinhas · Bombas</span><span class="tag tag-kitchen">Cocina completa en las 4</span></div>
+            <h3 class="hotel-name">Canto da Catarina Bombinhas (Bella Catarina)</h3>
+            <p class="hotel-address">📍 Rua Cardeal, 239, Bombas, Bombinhas - SC · <strong>200 m de Playa de Bombas</strong> (1 cuadra y media).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 24.880</div>
-            <div class="price-sub">Prom. R$ 622/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/881989270.jpg?k=9c4ace462c32733fe6c9efd6c98b7d04104fba6ff07612dc2a8cacb866a2a9d9&o=" alt="Suite luminosa con balcón en Canto da Catarina Bombinhas" loading="lazy">
-            <div class="photo-caption">Suites modernas de 30 m² con balcón (edificio 2022 con ascensor)</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cantodacatarina.com.br/wp-content/uploads/2026/09/9cantodacatarina-768x1024.jpg" alt="Vista interior y equipamiento en Canto da Catarina" loading="lazy">
-            <div class="photo-caption">Ambientes integrados con cocina de inducción y microondas</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cantodacatarina.com.br/wp-content/uploads/2022/06/Standard-reduzidas-15.jpg" alt="Cocina equipada dentro de la suite en Canto da Catarina" loading="lazy">
-            <div class="photo-caption">Cocina privada completa en el 100% de las habitaciones</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Suites · 10 Noches</div><div class="price-total">R$ 24.880</div><div class="price-sub">Prom. R$ 622/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte Standard Matrimonial (30 m², cama matrimonial + cocina completa)</span> <strong>R$ 594/noche (R$ 5.940)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte Standard Matrimonial (30 m², cama matrimonial + cocina completa)</span> <strong>R$ 594/noche (R$ 5.940)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Suíte Deluxe Vista Parcial Mar (30 m², matrimonial + bebé gratis &lt;2 años + cocina)</span> <strong>R$ 620/noche (R$ 6.200)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Suíte Standard Familiar (30 m², 1 cama matrimonial + 2 individuales + cocina)</span> <strong>R$ 680/noche (R$ 6.800)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Estándar" data-pt="Suíte Standard">Suite Estándar</span> (30 m², cocina completa)</span><span><strong>R$ 594/n</strong> · R$ 5.940</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Estándar" data-pt="Suíte Standard">Suite Estándar</span> (30 m², cocina completa)</span><span><strong>R$ 594/n</strong> · R$ 5.940</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Suite Lujo Vista Parcial Mar" data-pt="Suíte Deluxe Vista Parcial Mar">Suite Lujo Vista Parcial Mar</span> (bebé &lt; 2 años gratis)</span><span><strong>R$ 620/n</strong> · R$ 6.200</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Suite Familiar" data-pt="Suíte Standard Familiar">Suite Familiar</span> (1 mat. + 2 ind. + cocina)</span><span><strong>R$ 680/n</strong> · R$ 6.800</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> <strong>Todas las suites del edificio tienen cocina privada completa</strong> con anafe de inducción (cooktop), microondas, frigobar, sandwichera, cafetera/pava eléctrica, bacha y utensilios de cocina, más cuna a pedido.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,3/10 Booking [552 res.] · 4,8/5 Google [197 res.]):</strong> Una de las opciones más confiables y reservadas de Bombas. Edificio nuevo con ascensor, a 1 cuadra y media de la playa y al lado del supermercado Russi &amp; Russi. Desayuno entregado en cestas artesanales cada mañana.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Las 4 suites poseen cocina privada con anafe de inducción, microondas, frigobar, sandwichera, pava eléctrica, cafetera, vajilla y cuna a pedido.</div>
+            <div class="reviews-box">⭐ <strong>9,3/10 Booking</strong> (552 reseñas · Personal 9,5 · Ubicación 9,4) · <strong>4,8/5 Google</strong> (197 reseñas). Desayuno en cestas individuales y limpieza con cambio de blancos cada 3 noches.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Cardeal, 239, Bombas, Bombinhas - SC, CEP 88215-000</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (47) 99969-9168 (Anfitrión: Marcos Aurélio)</li>
-              <li><strong>Web Oficial:</strong> <a href="https://cantodacatarina.com.br/" target="_blank">cantodacatarina.com.br</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffehjjjgjjbgi"></span></li><li><strong>Atención:</strong> Español y portugués (anfitrión Marcos Aurélio)</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5547999699168?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20para%204%20su%C3%ADtes%20no%20Canto%20da%20Catarina%20Bombinhas%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3%20incluso." target="_blank">💬 Abrir WhatsApp (+55 47 99969-9168)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/bella-catarina.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://cantodacatarina.com.br/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjjjgjjbgi" data-hotel="Canto da Catarina Bombinhas" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjjjgjjbgi" data-hotel="Canto da Catarina Bombinhas" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Canto+da+Catarina+Bombinhas+Rua+Cardeal+239+Bombas" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/bella-catarina.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://cantodacatarina.com.br/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 6 -->
-      <article class="hotel-card" id="opt-6" data-zone="floripa-este-sur">
+      <!-- #6 -->
+      <article class="hotel-card" id="opt-6" data-zone="floripa-sur">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#6 A 50M DE LA ARENA (9,3 BOOKING / 4,7 GOOGLE)</span>
-              <span class="tag tag-beachfront">50 m del Mar (Sin Cruzar Avenidas)</span>
-              <span class="tag tag-kitchen">Cocina Privada en las 4 Unidades</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#6</span><span class="tag tag-beachfront">50 m del Mar</span><span class="tag tag-zone">Florianópolis Este · Barra da Lagoa</span><span class="tag tag-kitchen">Cocina privada en los 4</span></div>
             <h3 class="hotel-name">Pousada Mar do Leste</h3>
-            <p class="hotel-address">📍 Rua Dorvalina Carolina Florindo, 37, Barra da Lagoa, Florianópolis - SC · <strong>A 50 m exactos de la arena</strong></p>
+            <p class="hotel-address">📍 Rua Dorvalina Carolina Florindo, 37, Barra da Lagoa, Florianópolis - SC · <strong>50 metros exactos de la arena</strong> (sin cruzar avenidas).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 21.800</div>
-            <div class="price-sub">Prom. R$ 545/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://www.pousadamardoleste.com.br/_astro/fachada-da-pousada-mar-do-leste.Q7Our2G9_ZXo0ey.jpg" alt="Fachada y piscina de Pousada Mar do Leste" loading="lazy">
-            <div class="photo-caption">Piscina para adultos y niños a 50 metros de la playa</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://www.pousadamardoleste.com.br/_astro/apartamento-casal-com-cozinha-na-pousada.C4Z2Z7it_AgQzb.webp" alt="Apartamento matrimonial con cocina en Pousada Mar do Leste" loading="lazy">
-            <div class="photo-caption">Apartamento matrimonial con cocina equipada</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/22946591.jpg?k=bc74f9e510568c62bbbec26a8201eeb0db7c6571a35189162792e904de8590ea&o=" alt="Área de piscina y solárium en Pousada Mar do Leste" loading="lazy">
-            <div class="photo-caption">Solárium y jardines en Barra da Lagoa</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Deptos · 10 Noches</div><div class="price-total">R$ 21.800</div><div class="price-sub">Prom. R$ 545/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Apartamento Doble Planta Baja con Cocina (25 m², 1 cama Queen)</span> <strong>R$ 500/noche (R$ 5.000)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Apartamento Doble Planta Alta con Cocina (25 m², 1 cama Queen)</span> <strong>R$ 500/noche (R$ 5.000)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años gratis):</strong> Apartamento Familiar con Cocina Equipada (35 m², 1 cama Queen + espacio cuna)</span> <strong>R$ 580/noche (R$ 5.800)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Apartamento Triple con Cocina (33 m², 1 cama Queen + 1 cama individual)</span> <strong>R$ 600/noche (R$ 6.000)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Depto Doble Planta Baja con Cocina" data-pt="Apartamento Duplo Térreo com Cozinha">Depto Doble Planta Baja con Cocina</span> (25 m²)</span><span><strong>R$ 500/n</strong> · R$ 5.000</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Depto Doble Planta Alta con Cocina" data-pt="Apartamento Duplo Superior com Cozinha">Depto Doble Planta Alta con Cocina</span> (25 m²)</span><span><strong>R$ 500/n</strong> · R$ 5.000</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Depto Familiar con Cocina" data-pt="Apartamento Família com Cozinha">Depto Familiar con Cocina</span> (35 m², bebé 0–3 gratis)</span><span><strong>R$ 580/n</strong> · R$ 5.800</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Depto Triple con Cocina" data-pt="Apartamento Triplo com Cozinha">Depto Triple con Cocina</span> (33 m², 1 mat. + 1 ind.)</span><span><strong>R$ 600/n</strong> · R$ 6.000</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> Todas las unidades son apartamentos con <strong>cocina compacta privada</strong> que incluye heladera, microondas, cafetera/hervidor, pileta de cocina, elementos de cocción y vajilla. Bebés de 0 a 3 años se hospedan sin cargo.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,3/10 Booking [Ubicación 9,7] · 4,7/5 Google · #1 en Tripadvisor Barra da Lagoa):</strong> Muy recomendada para familias con niños por estar en el sector más calmo de Barra da Lagoa (cerca del Proyecto Tamar y el canal).
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Todas las unidades incluyen cocina privada compacta con heladera, microondas, hervidor, bacha, vajilla y mesa comedor.</div>
+            <div class="reviews-box">⭐ <strong>9,3/10 Booking</strong> (307 reseñas · Ubicación 9,7) · <strong>4,7/5 Google</strong> (363 reseñas). Elogian el agua tranquila ideal para niños cerca del Proyecto Tamar y la atención de su dueño Eloy.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Dorvalina Carolina Florindo, 37, Barra da Lagoa, Florianópolis - SC, CEP 88061-100</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (48) 3232-3209 (Atención en español y portugués con Eloy)</li>
-              <li><strong>Web y Motor Oficial:</strong> <a href="https://www.pousadamardoleste.com.br/es/" target="_blank">pousadamardoleste.com.br</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeidcdcdcaj"></span></li><li><strong>Atención:</strong> Español, portugués e inglés (8 a 20 h)</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/554832323209?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20para%204%20apartamentos%20na%20Pousada%20Mar%20do%20Leste%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3." target="_blank">💬 Abrir WhatsApp (+55 48 3232-3209)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-mar-do-leste.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://www.pousadamardoleste.com.br/es/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeidcdcdcaj" data-hotel="Pousada Mar do Leste" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeidcdcdcaj" data-hotel="Pousada Mar do Leste" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Mar+do+Leste+Rua+Dorvalina+Carolina+Florindo+37+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-mar-do-leste.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://www.pousadamardoleste.com.br/es/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 7 -->
+      <!-- #7 -->
       <article class="hotel-card" id="opt-7" data-zone="bombinhas">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#7 CALIFICACIÓN 9,3 BOOKING / 4,9 GOOGLE</span>
-              <span class="tag tag-zone">Governador Celso Ramos (Playas Calmas)</span>
-              <span class="tag tag-kitchen">Apto Planta Baja c/ Cocina + Cocina Común</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#7</span><span class="tag tag-zone">Governador Celso Ramos · Praia do Antenor</span><span class="tag tag-kitchen">Microondas + cocina común</span></div>
             <h3 class="hotel-name">Pousada Morada do Mar (Casa do Oscar)</h3>
-            <p class="hotel-address">📍 Rua Nicolau Moura de Carvalho, 315, Governador Celso Ramos - SC · <strong>A 150 m de Praia do Antenor (aguas tipo piscina)</strong></p>
+            <p class="hotel-address">📍 Rua Nicolau Moura de Carvalho, 315, Governador Celso Ramos - SC · <strong>150 m de Praia do Antenor</strong> (aguas súper calmas).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 25.200</div>
-            <div class="price-sub">Prom. R$ 630/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/399176075.jpg?k=230db46259e8949cbe6a484cb00b3d559bfdcc147e07a85ef8e5b9a00cc8da70&o=" alt="Exterior y jardín de Pousada Morada do Mar Casa do Oscar" loading="lazy">
-            <div class="photo-caption">Jardines y deck panorámico a 150 m del mar calmo</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/614274178.jpg?k=041a2faddff26b4a3d6f5ef4577c77e2d2d2d4c7a6af42da5361fc25be02d557&o=" alt="Habitación matrimonial amplia en Pousada Morada do Mar" loading="lazy">
-            <div class="photo-caption">Suítes amplias de 33 a 35 m² con cama King</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://pousada-casa-do-oscar.hotelsantacatarina.com/data/Images/OriginalPhoto/11735/1173593/1173593712/image-governador-celso-ramos-pousada-morada-do-mar-39.JPEG" alt="Instalaciones de Pousada Morada do Mar en Governador Celso Ramos" loading="lazy">
-            <div class="photo-caption">Entorno familiar tranquilo cerca de Palmas y Calheiros</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Hab. · 10 Noches</div><div class="price-total">R$ 25.200</div><div class="price-sub">Prom. R$ 630/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte Deluxe c/ Balcón (33 m², cama matrimonial King)</span> <strong>R$ 590/noche (R$ 5.900)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte Deluxe c/ Balcón (33 m², cama matrimonial King)</span> <strong>R$ 590/noche (R$ 5.900)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Apartamento Planta Baja con Cocina (35 m², cama matrimonial + patio)</span> <strong>R$ 670/noche (R$ 6.700)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Apartamento Familiar (35 m², dormitorio matrimonial + camas individuales)</span> <strong>R$ 670/noche (R$ 6.700)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Lujo con Balcón" data-pt="Suíte Deluxe com Varanda">Suite Lujo con Balcón</span> (33 m², cama King)</span><span><strong>R$ 590/n</strong> · R$ 5.900</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Lujo con Balcón" data-pt="Suíte Deluxe com Varanda">Suite Lujo con Balcón</span> (33 m², cama King)</span><span><strong>R$ 590/n</strong> · R$ 5.900</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Depto Planta Baja con Cocina" data-pt="Apartamento Térreo com Cozinha">Depto Planta Baja con Cocina</span> (35 m², microondas + heladera)</span><span><strong>R$ 670/n</strong> · R$ 6.700</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Depto Familiar (2 ambientes)" data-pt="Apartamento Família">Depto Familiar (2 ambientes)</span> (35 m², mat. + camas)</span><span><strong>R$ 670/n</strong> · R$ 6.700</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> El Apartamento de Planta Baja (Hab. 3) incluye <strong>heladera, microondas y cafetera/pava eléctrica privados en la unidad</strong>, más acceso libre a la <strong>cocina compartida completa</strong> de la posada.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,3/10 Booking [130 res.] · 4,9/5 Google [174 res.]):</strong> Destacan la hospitalidad de sus dueños (Oscar y Bruno), las suites súper espaciosas y la cercanía a pie a bahías sin olas ideales para bebés.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> La Hab. 3 tiene heladera, microondas y pava eléctrica privados, más acceso a la cocina compartida completa de la posada.</div>
+            <div class="reviews-box">⭐ <strong>9,3/10 Booking</strong> (130 reseñas · Personal 9,6) · <strong>4,9/5 Google</strong> (174 reseñas). Destacan la calidez de los anfitriones Oscar y Bruno y el desayuno casero.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Nicolau Moura de Carvalho, 315, Governador Celso Ramos - SC, CEP 88190-000</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (48) 99182-9387</li>
-              <li><strong>Instagram Oficial:</strong> <a href="https://www.instagram.com/pousadacasadooscar/" target="_blank">@pousadacasadooscar</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeijjbicjdih"></span></li><li><strong>Canal:</strong> Atención directa por WhatsApp</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5548991829387?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20para%204%20quartos%20na%20Pousada%20Morada%20do%20Mar%20%28Casa%20do%20Oscar%29%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3." target="_blank">💬 Abrir WhatsApp (+55 48 99182-9387)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-casa-do-oscar-governador-celso-ramos.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeijjbicjdih" data-hotel="Pousada Morada do Mar" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeijjbicjdih" data-hotel="Pousada Morada do Mar" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Casa+do+Oscar+Rua+Nicolau+Moura+de+Carvalho+315+Governador+Celso+Ramos" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-casa-do-oscar-governador-celso-ramos.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 8 -->
-      <article class="hotel-card" id="opt-8" data-zone="itapema">
+      <!-- #8 COMBO -->
+      <article class="hotel-card combo-card" id="opt-8" data-zone="itapema combo">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#8 MEJOR PRECIO COMBINADO (9,2 Y 9,3 BOOKING)</span>
-              <span class="tag tag-zone">Meia Praia · Itapema</span>
-              <span class="tag tag-kitchen">Combinación a 130 m a pie · Flat c/ Cocina</span>
-            </div>
-            <h3 class="hotel-name">Combo: Pousada Vovô Valdir (3 Habs) + Pousada Terra do Sol (1 Flat c/ Cocina)</h3>
-            <p class="hotel-address">📍 Rua 272 nº 400 y Rua 282 nº 236, Meia Praia, Itapema - SC · <strong>A 300–450 m reales de la playa (separadas por 1 min a pie)</strong></p>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#8</span><span class="tag tag-combo">COMBO AGRUPADO (A 130 m / 2 min a pie)</span><span class="tag tag-zone">Itapema · Meia Praia</span></div>
+            <h3 class="hotel-name">Pousada Vovô Valdir + Pousada Terra do Sol</h3>
+            <p class="hotel-address">📍 La opción más económica del informe: 3 habitaciones con desayuno abundante en Vovô Valdir (450 m del mar) + Hab. 3 en Depto con anafe y microondas en Terra do Sol (300 m del mar, a menos de 2 minutos caminando).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 20.170</div>
-            <div class="price-sub">Prom. R$ 504/noche · Ahorras R$ 6.830</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://terradosol.net.br/wp-content/uploads/2021/10/ WhatsApp-Image-2021-10-18-at-16.51.14.jpeg" onerror="this.src='https://cf.bstatic.com/xdata/images/hotel/max1024x768/326205145.jpg?k=eee589014b1e02e4cbf733431a4c81183370c73a63af222f652403eaa27a0485&o='" alt="Instalaciones en Meia Praia Itapema" loading="lazy">
-            <div class="photo-caption">Ubicación privilegiada en el corazón de Meia Praia (Itapema)</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://images.trvl-media.com/lodging/86000000/85080000/85079400/85079324/bbfc88a9.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Habitación confortable y luminosa" loading="lazy">
-            <div class="photo-caption">Habitaciones impecables con excelente calificación (9,2 y 9,3)</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://media.omnibees.com/Images/16397/Property/1114219.jpg" alt="Unidad equipada con minicocina" loading="lazy">
-            <div class="photo-caption">Flat equipado con anafe de 2 hornallas, heladera y microondas</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total Combo · 10 Noches</div><div class="price-total">R$ 20.170</div><div class="price-sub">Prom. R$ 504/noche · Ahorras R$ 6.830</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución Combinada y Precios (18/01/2027 – 28/01/2027)</h4>
+            <div class="combo-split-grid">
+              <div class="combo-unit"><h5>🏨 Alojamiento A: Pousada Vovô Valdir</h5><p><strong>Hab. 1, 2 y 4</strong> · Rua 272 nº 400 (450 m del mar). Nota <strong>9,2/10 Booking</strong> · <strong>4,6/5 Google</strong>. Desayuno casero muy abundante y cocina compartida completa.</p></div>
+              <div class="combo-unit"><h5>🏢 Alojamiento B: Pousada Terra do Sol</h5><p><strong>Hab. 3 (Bebé)</strong> · Rua 282 nº 236 (300 m del mar, a 130 m de Vovô Valdir). Nota <strong>9,3/10 Booking</strong>. Deptos con anafe 2 bocas, microondas y heladera grande.</p></div>
+            </div>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Quarto Duplo en Pousada Vovô Valdir (cama matrimonial, desayuno incluido)</span> <strong>R$ 480/noche (R$ 4.800)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Quarto Duplo en Pousada Vovô Valdir (cama matrimonial, desayuno incluido)</span> <strong>R$ 480/noche (R$ 4.800)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Flat c/ Minicocina en Pousada Terra do Sol (R$ 447/n + R$ 60 desayuno) o en Vovô Valdir c/ cocina común</span> <strong>R$ 507/noche (R$ 5.070)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Quarto Triplo en Pousada Vovô Valdir (1 matrimonial + 1 individual, con desayuno)</span> <strong>R$ 550/noche (R$ 5.500)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos — Vovô Valdir):</strong> <span class="i18n-term" data-es="Habitación Doble" data-pt="Quarto Duplo">Habitación Doble</span> (c/ desayuno)</span><span><strong>R$ 480/n</strong> · R$ 4.800</span></li>
+              <li><span><strong>Hab. 2 (2 adultos — Vovô Valdir):</strong> <span class="i18n-term" data-es="Habitación Doble" data-pt="Quarto Duplo">Habitación Doble</span> (c/ desayuno)</span><span><strong>R$ 480/n</strong> · R$ 4.800</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé — Terra do Sol):</strong> <span class="i18n-term" data-es="Depto con Minicocina" data-pt="Flat com Minicozinha">Depto con Minicocina</span> (+ R$ 60/día desayuno)</span><span><strong>R$ 507/n</strong> · R$ 5.070</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños — Vovô Valdir):</strong> <span class="i18n-term" data-es="Habitación Triple" data-pt="Quarto Triplo">Habitación Triple</span> (1 mat. + 1 ind., c/ desayuno)</span><span><strong>R$ 550/n</strong> · R$ 5.500</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> Doble alternativa: pueden alojar las 4 habitaciones juntas en <strong>Pousada Vovô Valdir</strong> (que cuenta con <strong>cocina compartida completa</strong> para huéspedes, quedando en R$ 19.900 total), o alojar la Hab. 3 a 130 metros en el Flat de <strong>Pousada Terra do Sol</strong> con <strong>cocina privada propia (anafe cooktop de 2 hornallas, microondas, heladera grande y bacha)</strong>.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (Vovô Valdir: 9,2 Booking / 4,6 Google · Terra do Sol: 9,3 Booking):</strong> Huéspedes elogian el desayuno casero abundante de Vovô Valdir (9,6 en atención) y las calles planas y seguras de Meia Praia para caminar con carrito de bebé.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Terra do Sol incluye anafe cooktop 2 bocas, microondas, heladera grande, bacha y utensilios en Hab. 3. Vovô Valdir también tiene cocina compartida completa.</div>
+            <div class="reviews-box">⭐ Reseñas elogian la limpieza constante, el desayuno casero de Vovô Valdir y la cercanía a supermercados y panaderías de Meia Praia.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Pousada Vovô Valdir:</strong> Rua 272, nº 400, Meia Praia · WhatsApp: +55 47 99979-1795 · Web: <a href="https://pousadavovovaldir.com.br/" target="_blank">pousadavovovaldir.com.br</a></li>
-              <li><strong>Pousada Terra do Sol:</strong> Rua 282, nº 236, Meia Praia · WhatsApp: +55 47 99994-4223 · Email: <a href="mailto:terradosol.net.br@gmail.com">terradosol.net.br@gmail.com</a> · Web: <a href="https://terradosol.net.br/" target="_blank">terradosol.net.br</a></li>
-            </ul>
+            <div><h4>📞 Contactos de Ambos Alojamientos</h4><ul class="contact-list"><li><strong>Vovô Valdir:</strong> <span class="ph-auto" data-k="ffehjjjhjbjhf"></span></li><li><strong>Terra do Sol:</strong> <span class="ph-auto" data-k="ffehjjjjeeccd"></span></li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5547999791795?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20cota%C3%A7%C3%A3o%20para%20nosso%20grupo%20familiar%20na%20Pousada%20Vov%C3%B4%20Valdir%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29." target="_blank">💬 WhatsApp Vovô Valdir</a>
-              <a class="btn btn-wa" href="https://wa.me/5547999944223?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20Flat%20com%20cozinha%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20na%20Pousada%20Terra%20do%20Sol." target="_blank">💬 WhatsApp Terra do Sol</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-vovo-valdir.pt-br.html" target="_blank">🔗 Booking Vovô Valdir</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjjjhjbjhf" data-hotel="Pousada Vovô Valdir" data-lang="pt" target="_blank" rel="noopener">💬 WA Vovô Valdir (PT)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjjjhjbjhf" data-hotel="Pousada Vovô Valdir" data-lang="es" target="_blank" rel="noopener">💬 WA Vovô Valdir (ES)</a></div>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjjjjeeccd" data-hotel="Pousada Terra do Sol" data-lang="pt" target="_blank" rel="noopener">💬 WA Terra do Sol (PT)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjjjjeeccd" data-hotel="Pousada Terra do Sol" data-lang="es" target="_blank" rel="noopener">💬 WA Terra do Sol (ES)</a></div>
+              <div class="btn-row"><a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Vovo+Valdir+Rua+272+400+Itapema+SC" target="_blank" rel="noopener">📍 Maps Vovô Valdir</a><a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Terra+do+Sol+Rua+282+236+Itapema+SC" target="_blank" rel="noopener">📍 Maps Terra do Sol</a></div>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-vovo-valdir.pt-br.html" target="_blank" rel="noopener">Booking Vovô Valdir</a><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-terra-do-sol-itapema.pt-br.html" target="_blank" rel="noopener">Booking Terra do Sol</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 9 -->
+      <!-- #9 -->
       <article class="hotel-card" id="opt-9" data-zone="floripa-norte">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#9 PÉ NA AREIA (9,1 BOOKING / 4,6 GOOGLE)</span>
-              <span class="tag tag-beachfront">0 a 50 m del Mar (Salida Directa)</span>
-              <span class="tag tag-kitchen">Cocina Privada con Horno en las 4 Habs</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#9</span><span class="tag tag-beachfront">0–50 m (Frente al Mar)</span><span class="tag tag-zone">Florianópolis Norte · Cachoeira do Bom Jesus</span><span class="tag tag-kitchen">Cocina con horno en las 4</span></div>
             <h3 class="hotel-name">La Alhambra Apart Hotel</h3>
-            <p class="hotel-address">📍 Av. Luiz Boiteux Piazza, 3437, Cachoeira do Bom Jesus, Florianópolis - SC · <strong>Frente al mar (salida directa a la arena)</strong></p>
+            <p class="hotel-address">📍 Av. Luiz Boiteux Piazza, 3437, Cachoeira do Bom Jesus, Florianópolis - SC · <strong>Frente al mar (0–50 m)</strong> con salida directa a la arena.</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 26.305</div>
-            <div class="price-sub">Prom. R$ 657,63/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/15290319.jpg?k=9520783fa76de346276c6f2f69c5e67384cb9b1957099b745e1b295891c32347&o=" alt="Jardín frente al mar de La Alhambra Apart Hotel" loading="lazy">
-            <div class="photo-caption">Jardín con salida directa a la playa de Cachoeira do Bom Jesus</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/15289943.jpg?k=b894e3a90b9d3d0787742791a01ce03b1b9a5586f689b3ea19f8e98c13e26b3c&o=" alt="Fachada de La Alhambra Apart Hotel" loading="lazy">
-            <div class="photo-caption">Edificio rodeado de palmeras con estacionamiento y desayuno</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://content.r9cdn.net/rimg/himg/41/a7/d7/expedia_group-512100-226243698-405359.jpg?width=500&height=350&crop=true&caller=HotelDetailsPage" alt="Vista exterior de La Alhambra Apart Hotel" loading="lazy">
-            <div class="photo-caption">Servicio gratuito de sombrillas y reposeras sobre la arena</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Deptos · 10 Noches</div><div class="price-total">R$ 26.305</div><div class="price-sub">Prom. R$ 657,63/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas (Reserva Directa)</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Apto Monoambiente con Cocina (28 m², 1 cama matrimonial)</span> <strong>R$ 628,50/noche (R$ 6.285)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Apto Monoambiente con Cocina (28 m², 1 cama matrimonial)</span> <strong>R$ 628,50/noche (R$ 6.285)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años gratis):</strong> Apto Monoambiente/Mediano con Cocina Completa (28–42 m²)</span> <strong>R$ 628,50/noche (R$ 6.285)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Apto Familiar 3/4 personas con Cocina (42–45 m², 1 matrimonial + individuales)</span> <strong>R$ 745,00/noche (R$ 7.450)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Depto Monoambiente" data-pt="Apartamento Estúdio / Kitnet">Depto Monoambiente</span> (28 m², matrimonial)</span><span><strong>R$ 628,50/n</strong> · R$ 6.285</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Depto Monoambiente" data-pt="Apartamento Estúdio / Kitnet">Depto Monoambiente</span> (28 m², matrimonial)</span><span><strong>R$ 628,50/n</strong> · R$ 6.285</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Depto Monoambiente / Mediano" data-pt="Apartamento Estúdio / Médio">Depto Monoambiente / Mediano</span> (bebé gratis)</span><span><strong>R$ 628,50/n</strong> · R$ 6.285</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Depto 3/4 Huéspedes" data-pt="Apartamento para 3/4 Hóspedes">Depto 3/4 Huéspedes</span> (42–45 m², mat. + ind.)</span><span><strong>R$ 745/n</strong> · R$ 7.450</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> <strong>Todos los departamentos cuentan con cocina privada completa</strong> equipada con anafe/hornallas, horno, microondas, heladera, bacha, vajilla y mesa de comedor.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,1/10 Booking [Ubicación 9,6; Personal 9,6] · 4,6/5 Google):</strong> Atendido por su dueño argentino (Gastón Olcese), sobre una de las playas de aguas más calmas y templadas del norte de Florianópolis.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Todas las unidades tienen cocina privada con heladera, microondas, anafe, horno, vajilla y mesa comedor.</div>
+            <div class="reviews-box">⭐ <strong>9,1/10 Booking</strong> (Ubicación 9,6 · Personal 9,6) · <strong>4,6/5 Google</strong> (226 reseñas). Atendido por su dueño argentino (Gastón Olcese); playa familiar de aguas calmas.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Av. Luiz Boiteux Piazza, 3437, Cachoeira do Bom Jesus, Florianópolis - SC, CEP 88056-000</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (48) 3284-8921</li>
-              <li><strong>Email:</strong> <a href="mailto:reservas@apartlaalhambra.com">reservas@apartlaalhambra.com</a></li>
-              <li><strong>Web Oficial:</strong> <a href="http://www.apartlaalhambra.com/" target="_blank">apartlaalhambra.com</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeidcieijcb"></span></li><li><strong>Servicios:</strong> Sombrillas y reposeras incluidas</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/554832848921?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20direta%20para%204%20apartamentos%20no%20La%20Alhambra%20Apart%20Hotel%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3." target="_blank">💬 Abrir WhatsApp (+55 48 3284-8921)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/la-alhambra-apart.es-ar.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="http://www.apartlaalhambra.com/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeidcieijcb" data-hotel="La Alhambra Apart Hotel" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeidcieijcb" data-hotel="La Alhambra Apart Hotel" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=La+Alhambra+Apart+Hotel+Av+Luiz+Boiteux+Piazza+3437+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/la-alhambra-apart.es-ar.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="http://www.apartlaalhambra.com/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 10 -->
-      <article class="hotel-card" id="opt-10" data-zone="floripa-este-sur">
+      <!-- #10 -->
+      <article class="hotel-card" id="opt-10" data-zone="floripa-sur">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#10 CALIFICACIÓN 9,1 BOOKING / 4,6 GOOGLE</span>
-              <span class="tag tag-zone">Barra da Lagoa · Florianópolis Este</span>
-              <span class="tag tag-kitchen">Studio PB con Cocina Completa + Desayuno en el Cuarto</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#10</span><span class="tag tag-zone">Florianópolis Este · Barra da Lagoa</span><span class="tag tag-kitchen">Cocina completa en Hab. 3 (PB)</span></div>
             <h3 class="hotel-name">Pousada Lozalti</h3>
-            <p class="hotel-address">📍 Rua Clara Simões Speck, 13, Barra da Lagoa, Florianópolis - SC · <strong>A 300 m reales de la playa</strong></p>
+            <p class="hotel-address">📍 Rua Clara Simões Speck, 13, Barra da Lagoa, Florianópolis - SC · <strong>300 m exactos de la playa</strong> en calle tranquila y segura.</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 22.500</div>
-            <div class="price-sub">Prom. R$ 562,50/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/80025114.jpg?k=468efed3e8ddd2042b0a99626beeced7d17b996bf7631b5a7db4329ebb002227&o=" alt="Piscina con tobogán en Pousada Lozalti" loading="lazy">
-            <div class="photo-caption">Piscina con tobogán infantil y jardines en calle tranquila</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://www.pousadalozalti.com.br/wp-content/uploads/2016/09/lozalti-galeria-1.jpg" alt="Vista exterior de Pousada Lozalti" loading="lazy">
-            <div class="photo-caption">Complejo familiar seguro con préstamo de sillas y sombrillas</div>
-          </div>
-          <div class="photo-item">
-            <img src="http://www.pousadalozalti.com.br/wp-content/uploads/2016/08/suite-06.jpg" alt="Interior de habitación en Pousada Lozalti" loading="lazy">
-            <div class="photo-caption">Habitaciones amplias con microondas y frigobar</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Unidades · 10 Noches</div><div class="price-total">R$ 22.500</div><div class="price-sub">Prom. R$ 562,50/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte 06 Matrimonial (cama Box, Smart TV, frigobar, microondas y bacha)</span> <strong>R$ 490/noche (R$ 4.900)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte 07 Matrimonial (cama Box, Smart TV, frigobar, microondas y bacha)</span> <strong>R$ 490/noche (R$ 4.900)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Apartamento Studio 04 Planta Baja (accesible sin escalones, cama Queen + cocina completa)</span> <strong>R$ 620/noche (R$ 6.200)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Apartamento Studio 10 Triple (1 cama matrimonial + 1 individual + cocina completa)</span> <strong>R$ 650/noche (R$ 6.500)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite 06 (1º Piso)" data-pt="Suíte 06 (1º Andar)">Suite 06 (1º Piso)</span> (matrimonial, microondas + frigobar)</span><span><strong>R$ 490/n</strong> · R$ 4.900</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite 07 (1º Piso)" data-pt="Suíte 07 (1º Andar)">Suite 07 (1º Piso)</span> (matrimonial, microondas + frigobar)</span><span><strong>R$ 490/n</strong> · R$ 4.900</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Estudio 04 Planta Baja" data-pt="Apartamento Studio 04 Térreo">Estudio 04 Planta Baja</span> (sin escalones + cocina completa)</span><span><strong>R$ 620/n</strong> · R$ 6.200</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Estudio 10 Triple" data-pt="Apartamento Studio 10 Triplo">Estudio 10 Triple</span> (mat. + ind. + cocina completa)</span><span><strong>R$ 650/n</strong> · R$ 6.500</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> El <em>Studio 04 en Planta Baja</em> (sin escalones para el carrito del bebé) cuenta con <strong>cocina completa privada con anafe cooktop, microondas, heladera, bacha y vajilla</strong>. Incluso las Suítes 06 y 07 tienen microondas y bacha propios.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,1/10 Booking [601 res.] · 4,6/5 Google [364 res.]):</strong> Elogian el desayuno personalizado servido directamente en la habitación/balcón y la piscina con tobogán para los niños.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Estudio 04 (PB accesible con cochecito) y Estudio 10 poseen cocina privada completa (heladera, anafe cooktop, microondas, vajilla). Suites 06 y 07 tienen microondas y frigobar.</div>
+            <div class="reviews-box">⭐ <strong>9,1/10 Booking</strong> (601 reseñas · Personal 9,5) · <strong>4,6/5 Google</strong> (364 reseñas). Desayuno personalizado servido en la habitación; piscina con tobogán infantil.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Clara Simões Speck, 13, Barra da Lagoa, Florianópolis - SC, CEP 88061-255</li>
-              <li><strong>WhatsApp 1:</strong> +55 (48) 99679-0336 · <strong>WhatsApp 2:</strong> +55 (48) 99161-2655</li>
-              <li><strong>Email:</strong> <a href="mailto:reservas@pousadalozalti.com.br">reservas@pousadalozalti.com.br</a></li>
-              <li><strong>Web Oficial:</strong> <a href="https://www.pousadalozalti.com.br/" target="_blank">pousadalozalti.com.br</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp:</strong> <span class="ph-auto" data-k="ffeijjghjaddg"></span></li><li><strong>Extras:</strong> Sombrillas y reposeras incluidas</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5548996790336?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20para%204%20acomoda%C3%A7%C3%B5es%20na%20Pousada%20Lozalti%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%282%20Su%C3%ADtes%20casal%20%2B%20Studio%2004%20com%20beb%C3%AA%20%2B%20Studio%2010%20triplo%29." target="_blank">💬 Abrir WhatsApp (+55 48 99679-0336)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-lozalti.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://www.pousadalozalti.com.br/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeijjghjaddg" data-hotel="Pousada Lozalti" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeijjghjaddg" data-hotel="Pousada Lozalti" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Lozalti+Rua+Clara+Simoes+Speck+13+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-lozalti.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://www.pousadalozalti.com.br/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 11 -->
-      <article class="hotel-card" id="opt-11" data-zone="floripa-este-sur">
+      <!-- #11 -->
+      <article class="hotel-card" id="opt-11" data-zone="floripa-sur">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#11 CALIFICACIÓN 9,1 BOOKING / 4,6 GOOGLE</span>
-              <span class="tag tag-zone">Praia do Campeche · Florianópolis Sur</span>
-              <span class="tag tag-kitchen">Apto c/ Cocina 4 Hornallas, Horno y Licuadora</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#11</span><span class="tag tag-zone">Florianópolis Sur · Praia do Campeche</span><span class="tag tag-kitchen">Cocina 4 hornallas + horno + licuadora</span></div>
             <h3 class="hotel-name">Complexo Hotel &amp; Pousada Natur Campeche</h3>
-            <p class="hotel-address">📍 Servidão Família Nunes, 61 / Av. Pequeno Príncipe, 2196, Campeche, Florianópolis - SC · <strong>A 150 m de Praia do Campeche</strong></p>
+            <p class="hotel-address">📍 Servidão Família Nunes, 61, Campeche, Florianópolis - SC · <strong>150 m de Playa de Campeche</strong> (50 m del sendero de acceso).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 24.500</div>
-            <div class="price-sub">Prom. R$ 612,50/noche · Con Desayuno Colonial</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/813940345.jpg?k=4d3fc011e63a29215f69698016ca1457d25d232a8697318a24101624cb7d7195&o=" alt="Apartamento con cocina en Pousada Natur Campeche" loading="lazy">
-            <div class="photo-caption">Apartamento de 36 m² con cocina equipada para la Habitación 3</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/811539299.jpg?k=fae4659e1941379058e8857d1058af2dce4c3dcf07087b303ab96cdde666f926&o=" alt="Piscina y jardines de Natur Campeche" loading="lazy">
-            <div class="photo-caption">Piscina, jacuzzi climatizado y jardines tropicales</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://pousada-natur-campeche-88063-340.hotelflorianopolis.com/data/Images/OriginalPhoto/16219/1621979/1621979103/image-florianopolis-pousada-natur-campeche-34.JPEG" alt="Instalaciones de Pousada Natur Campeche" loading="lazy">
-            <div class="photo-caption">A 50 metros del sendero peatonal a la playa de Campeche</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Hab. · 10 Noches</div><div class="price-total">R$ 24.500</div><div class="price-sub">Prom. R$ 612,50/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte c/ Sacada (18 m², cama matrimonial, balcón, frigobar y pava eléctrica)</span> <strong>R$ 560/noche (R$ 5.600)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte c/ Sacada (18 m², cama matrimonial, balcón, frigobar y pava eléctrica)</span> <strong>R$ 560/noche (R$ 5.600)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Apartamento c/ Sacada e Cozinha Completa (36 m², matrimonial + cocina completa)</span> <strong>R$ 720/noche (R$ 7.200)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Suíte Standard Térrea Triple (16 m², 1 cama matrimonial + 1 cama individual)</span> <strong>R$ 610/noche (R$ 6.100)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite con Balcón" data-pt="Suíte com Sacada">Suite con Balcón</span> (18 m², pava eléctrica + frigobar)</span><span><strong>R$ 560/n</strong> · R$ 5.600</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite con Balcón" data-pt="Suíte com Sacada">Suite con Balcón</span> (18 m², pava eléctrica + frigobar)</span><span><strong>R$ 560/n</strong> · R$ 5.600</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Depto con Balcón y Cocina Completa" data-pt="Apartamento com Sacada e Cozinha Completa">Depto con Balcón y Cocina Completa</span> (36 m²)</span><span><strong>R$ 720/n</strong> · R$ 7.200</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Suite Estándar Planta Baja" data-pt="Suíte Standard Térrea">Suite Estándar Planta Baja</span> (16 m², 1 mat. + 1 ind.)</span><span><strong>R$ 610/n</strong> · R$ 6.100</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> El Apartamento de 36 m² (Hab. 3) incluye <strong>cocina con fogón de 4 hornallas, horno, microondas, heladera, licuadora (ideal para procesar papillas del bebé), pava eléctrica y vajilla</strong>. Además hay microondas común en el hall.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (9,1/10 Booking Hotel Natur · 4,6/5 Google):</strong> Incluye desayuno colonial completo y acceso a las piscinas y jacuzzi climatizado del complejo.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Hab. 3 tiene fogón de 4 hornallas, horno, microondas, heladera, licuadora (ideal para papillas), tostadora y pava eléctrica. Además hay microondas común en el hall.</div>
+            <div class="reviews-box">⭐ <strong>9,1/10 Booking</strong> (Complejo Hotel Natur · Personal 9,7) · <strong>4,6/5 Google</strong>. Desayuno colonial muy elogiado, uso de piscina y jacuzzi climatizado del hotel.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Servidão Família Nunes, 61 / Av. Pequeno Príncipe, 2196, Campeche, Florianópolis - SC</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (48) 99139-7113</li>
-              <li><strong>Email:</strong> <a href="mailto:comercial@naturcampeche.com.br">comercial@naturcampeche.com.br</a></li>
-              <li><strong>Web Oficial:</strong> <a href="https://naturcampeche.com/pousada.html" target="_blank">naturcampeche.com/pousada.html</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeijjbdjhbbd"></span></li><li><strong>Zona:</strong> Campeche Sur</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5548991397113?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20cota%C3%A7%C3%A3o%20para%204%20acomoda%C3%A7%C3%B5es%20na%20Pousada%20Natur%20Campeche%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3." target="_blank">💬 Abrir WhatsApp (+55 48 99139-7113)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-natur-campeche-florianopolis.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://naturcampeche.com/pousada.html" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeijjbdjhbbd" data-hotel="Pousada Natur Campeche" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeijjbdjhbbd" data-hotel="Pousada Natur Campeche" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+Natur+Campeche+Servidao+Familia+Nunes+61+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-natur-campeche-florianopolis.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://naturcampeche.com/pousada.html" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 12 -->
+      <!-- #12 -->
       <article class="hotel-card" id="opt-12" data-zone="itapema">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#12 APARTHOTEL COMPLETO (8,9 BOOKING / 4,5 GOOGLE)</span>
-              <span class="tag tag-zone">Centro / Canto da Praia · Itapema</span>
-              <span class="tag tag-kitchen">4 Departamentos de 1 Dormitorio c/ Cocina Completa</span>
-            </div>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#12</span><span class="tag tag-zone">Itapema · Centro / Canto da Praia</span><span class="tag tag-kitchen">Cocina a gas en los 4 deptos</span></div>
             <h3 class="hotel-name">Hotel Residencial Itapema Vacation Club</h3>
-            <p class="hotel-address">📍 Av. Governador Celso Ramos, 707, Centro, Itapema - SC · <strong>A 150 m reales de la playa (aguas muy mansas)</strong></p>
+            <p class="hotel-address">📍 Av. Governador Celso Ramos, 707, Centro, Itapema - SC · <strong>150 m del mar</strong> (menos de 2 min a pie, sin avenidas rápidas).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Aptos · 10 Noches</div>
-            <div class="price-total">R$ 26.600</div>
-            <div class="price-sub">En paquete directo WhatsApp · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/505429943.jpg?k=050d76fabec018cfec8b83b4c6a6ad852c255f7f7d0c2a1c06594c8c4de8e6cd&o=" alt="Edificio de apartamentos cerca del mar" loading="lazy">
-            <div class="photo-caption">Aparthotel con piscinas térmicas cubiertas y en terraza</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/929173695.jpg?k=8ff0e947ac95b584e7bb060763bd384753415a27bc26225be41e4d380165c0ee&o=" alt="Área de piscina y recreación familiar" loading="lazy">
-            <div class="photo-caption">A 150 metros de la playa sin cruzar rutas rápidas</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://media.omnibees.com/Images/16397/Property/1114219.jpg" alt="Departamento equipado con cocina y sala" loading="lazy">
-            <div class="photo-caption">Todos los departamentos tienen 1 dormitorio separado + sala y cocina</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total Directo · 10 Noches</div><div class="price-total">R$ 26.600</div><div class="price-sub">Tarifa directa grupo (R$ 26.400–27.000)</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas (Bloqueo Directo 4 Deptos)</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Apto 1 Dormitorio con sala, balcón y cocina completa (cama matrimonial)</span> <strong>R$ 665/noche directo (R$ 6.650)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Apto 1 Dormitorio con sala, balcón y cocina completa (cama matrimonial)</span> <strong>R$ 665/noche directo (R$ 6.650)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años gratis):</strong> Apto 1 Dormitorio con cocina completa a gas + microondas</span> <strong>R$ 665/noche directo (R$ 6.650)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Apto 1 Dormitorio Familiar (dormitorio matrimonial + sofá cama/camas en sala)</span> <strong>R$ 665/noche directo (R$ 6.650)</strong></li>
+              <li><span><strong>Hab. 1 a Hab. 4 (4 × <span class="i18n-term" data-es="Depto 1 Dormitorio" data-pt="Apartamento 1 Dormitório">Depto 1 Dormitorio</span>):</strong> Sala, cocina a gas completa, dormitorio y balcón</span><span><strong>~R$ 665/n c/u</strong> · R$ 26.600</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> Cada uno de los 4 departamentos cuenta con <strong>cocina privada completa (cocina a gas, microondas, heladera grande, bacha, ollas y comedor)</strong>. El desayuno buffet está 100% incluido durante toda la temporada de verano.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (8,9/10 Booking [614 res.] · 4,5/5 Google [638 res.]):</strong> Destacan las piscinas térmicas cubiertas (ideales si toca un día nublado con niños y bebé) y la amplitud de los departamentos. En portales OTA suma R$ 32.200, pero negociando las 40 noches-habitación por WhatsApp directo cierra en ~R$ 26.600.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Los 4 departamentos cuentan con cocina privada completa (anafe/cocina a gas, microondas, heladera, bacha, ollas y vajilla).</div>
+            <div class="reviews-box">⭐ <strong>8,9/10 Booking</strong> (614 reseñas) · <strong>4,5/5 Google</strong> (638 reseñas). Elogian amplitud de departamentos, piscinas térmicas, cercanía a supermercados y desayuno buffet de verano (dic-feb).</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Av. Governador Celso Ramos, 707, Centro, Itapema - SC, CEP 88220-000</li>
-              <li><strong>Teléfono / WhatsApp:</strong> +55 (47) 98447-7638</li>
-              <li><strong>Email:</strong> <a href="mailto:reserva@hotelresidencialitapema.com.br">reserva@hotelresidencialitapema.com.br</a></li>
-              <li><strong>Web Oficial:</strong> <a href="https://hotelresidencialitapema.com/" target="_blank">hotelresidencialitapema.com</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp:</strong> <span class="ph-auto" data-k="ffehjieehhgdi"></span></li><li><strong>Zona:</strong> Centro de Itapema</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5547984477638?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20especial%20direta%20para%20grupo%20familiar%20%284%20apartamentos%20por%2010%20di%C3%A1rias%2C%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%29%20com%20caf%C3%A9%20da%20manh%C3%A3%20no%20Hotel%20Residencial%20Itapema." target="_blank">💬 Abrir WhatsApp (+55 47 98447-7638)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/residencial-itapema.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://hotelresidencialitapema.com/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffehjieehhgdi" data-hotel="Hotel Residencial Itapema" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffehjieehhgdi" data-hotel="Hotel Residencial Itapema" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Hotel+Residencial+Itapema+Av+Governador+Celso+Ramos+707+Itapema+SC" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/residencial-itapema.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://hotelresidencialitapema.com/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 13 -->
+      <!-- #13 -->
       <article class="hotel-card" id="opt-13" data-zone="floripa-norte">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#13 HOTEL DE PLAYA A 30M (8,8 BOOKING / 4,6 GOOGLE)</span>
-              <span class="tag tag-beachfront">30 m de la Arena (Servicio de Playa)</span>
-              <span class="tag tag-kitchen">Mini Cocina con Cooktop + Cuna Gratis</span>
-            </div>
-            <h3 class="hotel-name">Ingleses Park Hotel ( Alternativa: Praia Pousada Tatuíra / HANNA San Diego )</h3>
-            <p class="hotel-address">📍 Estrada Dom João Becker, 513, Praia dos Ingleses, Florianópolis - SC · <strong>A 30 m reales de la playa con acceso propio</strong></p>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#13</span><span class="tag tag-beachfront">30 m del Mar</span><span class="tag tag-zone">Florianópolis Norte · Ingleses</span><span class="tag tag-kitchen">2 minicocinas + cuna gratis</span></div>
+            <h3 class="hotel-name">Ingleses Park Hotel</h3>
+            <p class="hotel-address">📍 Estrada Dom João Becker, 513, Ingleses, Florianópolis - SC · <strong>30 m de la playa</strong> con acceso propio, sombrillas y reposeras.</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total Grupo · 10 Noches</div>
-            <div class="price-total">R$ 26.800</div>
-            <div class="price-sub">O R$ 26.146 en Pousada Tatuíra (a 30m)</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://ingleses-park.hotelflorianopolis.com/data/Images/OriginalPhoto/16674/1667450/1667450364/image-florianopolis-ingleses-park-hotel-45.JPEG" alt="Piscina frente al mar en Ingleses Park Hotel" loading="lazy">
-            <div class="photo-caption">Piscina climatizada y jacuzzi con vista al mar en Ingleses Park</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/121988374.jpg?k=1a9b1e9c7b8184c69c331038ce238a85f1638b0636875e7034d9c0bc30d8e3bc&o=" alt="Servicio de playa y piscina de Ingleses Park Hotel" loading="lazy">
-            <div class="photo-caption">Acceso a 30 m de la arena con sombrillas, reposeras y toallas</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/326205145.jpg?k=eee589014b1e02e4cbf733431a4c81183370c73a63af222f652403eaa27a0485&o=" alt="Vista al mar en Praia Pousada Tatuíra Ingleses" loading="lazy">
-            <div class="photo-caption">Alternativa a 30 m en la misma playa: Praia Pousada Tatuíra (R$ 26.146)</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 2 Deptos 2 Dorm. · 10 Noches</div><div class="price-total">R$ 26.800</div><div class="price-sub">Equiv. R$ 670/noche por cuarto · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Unidades y Tarifas (2 Deptos Familiares Directos)</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Opción A — Ingleses Park Hotel (Directo):</strong> 2 Apartamentos Familiares de 2 Dormitorios Privados c/u (60 m² c/u = 4 dormitorios separados en total + 2 mini cocinas + desayuno buffet)</span> <strong>R$ 2.680/noche total (R$ 26.800)</strong></li>
-              <li><span><strong>Opción B — Praia Pousada Tatuíra (Rua das Gaivotas 681, a 30m del mar):</strong> 2 Habs Dobles (R$ 619,80/n c/u) + 1 Suite Junior c/ bebé (R$ 655/n) + 1 Suite Triple Vista Mar (R$ 720/n)</span> <strong>R$ 2.614,60/noche (R$ 26.146)</strong></li>
-              <li><span><strong>Opción C — HANNA San Diego Apart Hotel (Canasvieiras, a 350m):</strong> 2 Suites Junior (R$ 560/n c/u) + 1 Apto Familiar c/ cocina y bebé gratis (R$ 620/n) + 1 Apto Triple (R$ 650/n)</span> <strong>R$ 2.390/noche (R$ 23.900)</strong></li>
+              <li><span><strong><span class="i18n-term" data-es="Depto Familiar 2 Dormitorios" data-pt="Apartamento Família 2 Quartos">Depto Familiar 2 Dormitorios</span> A (60 m²):</strong> Hab. 1 (mat.) + Hab. 4 (2/3 ind.) + minicocina</span><span><strong>R$ 1.340/n</strong> · R$ 13.400</span></li>
+              <li class="baby-row"><span><strong><span class="i18n-term" data-es="Depto Familiar 2 Dormitorios" data-pt="Apartamento Família 2 Quartos">Depto Familiar 2 Dormitorios</span> B (60 m²):</strong> Hab. 2 (mat.) + Hab. 3 (bebé, cuna gratis) + minicocina</span><span><strong>R$ 1.340/n</strong> · R$ 13.400</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> En <strong>Ingleses Park Hotel</strong> todas las unidades tienen <strong>mini cocina privada con cooktop eléctrico, microondas, frigobar, pava eléctrica y cuna gratis</strong>. En <strong>Tatuíra</strong> hay cocina compartida completa y en <strong>HANNA San Diego</strong> cocina privada con horno + cuna gratis.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (Ingleses Park: 8,8 Booking [2.113 res.] / 4,6 Google [2.665 res.]):</strong> Uno de los hoteles más completos del norte de la isla, con recreación, servicio de playa y desayuno buffet de categoría.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Cada apartamento tiene minicocina privada con anafe eléctrico (cooktop), microondas, frigobar, pava eléctrica y cuna gratis garantizada.</div>
+            <div class="reviews-box">⭐ <strong>8,8/10 Booking</strong> (2.113 reseñas · Ubicación 9,4 · Personal 9,4) · <strong>4,6/5 Google</strong> (2.665 reseñas). Destacan desayuno buffet excelente, piscina climatizada y jacuzzi con vista al mar.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Ingleses Park Hotel:</strong> Estrada Dom João Becker, 513 · WhatsApp: +55 48 98421-2909 · Email: <a href="mailto:contato@inglesesparkhotel.com.br">contato@inglesesparkhotel.com.br</a></li>
-              <li><strong>Praia Pousada Tatuíra:</strong> Rua das Gaivotas, 681 · Tel/WhatsApp: +55 48 3369-5206</li>
-              <li><strong>HANNA San Diego Apart:</strong> Rua Dr. João de Oliveira, 650 · WhatsApp: +55 48 99116-3327</li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp:</strong> <span class="ph-auto" data-k="ffeijiecbcjaj"></span></li><li><strong>Zona:</strong> Centro gastronómico de Ingleses</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5548984212909?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20cota%C3%A7%C3%A3o%20direta%20para%20nosso%20grupo%20familiar%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20no%20Ingleses%20Park%20Hotel." target="_blank">💬 WhatsApp Ingleses Park</a>
-              <a class="btn btn-wa" href="https://wa.me/554833695206" target="_blank">💬 WhatsApp Pousada Tatuíra</a>
-              <a class="btn btn-wa" href="https://wa.me/5548991163327" target="_blank">💬 WhatsApp HANNA San Diego</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/ahmad.es.html" target="_blank">🔗 Booking Ingleses Park</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeijiecbcjaj" data-hotel="Ingleses Park Hotel" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeijiecbcjaj" data-hotel="Ingleses Park Hotel" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Ingleses+Park+Hotel+Estrada+Dom+Joao+Becker+513+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/ahmad.es.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://www.inglesesparkhotel.com.br/" target="_blank" rel="noopener">Web Oficial</a></div>
             </div>
           </div>
         </div>
       </article>
 
-      <!-- OPCIÓN 14 -->
-      <article class="hotel-card" id="opt-14" data-zone="floripa-este-sur">
+      <!-- #14 -->
+      <article class="hotel-card" id="opt-14" data-zone="floripa-norte">
         <div class="hotel-header">
           <div class="hotel-title-group">
-            <div class="hotel-rank-line">
-              <span class="hotel-rank-pill">#14 A 100M DEL MAR (8,8 BOOKING / 4,5 GOOGLE)</span>
-              <span class="tag tag-zone">Novo Campeche · Florianópolis Sur</span>
-              <span class="tag tag-kitchen">Apto Master c/ Jardín y Cocina Americana</span>
-            </div>
-            <h3 class="hotel-name">Pousada do Capitão Floripa</h3>
-            <p class="hotel-address">📍 Rua Gilmar Darli Vieira, 254, Novo Campeche, Florianópolis - SC · <strong>A menos de 100 m reales de la arena</strong></p>
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#14</span><span class="tag tag-beachfront">30–50 m del Mar</span><span class="tag tag-zone">Florianópolis Norte · Ingleses</span><span class="tag tag-kitchen">Cocina compartida + frigobar</span></div>
+            <h3 class="hotel-name">Praia Pousada Tatuíra</h3>
+            <p class="hotel-address">📍 Rua das Gaivotas, 681, Ingleses, Florianópolis - SC · <strong>30–50 m de la playa</strong> (frente a la bajada a la arena).</p>
           </div>
-          <div class="hotel-price-box">
-            <div class="price-label">Total 4 Habs · 10 Noches</div>
-            <div class="price-total">R$ 25.800</div>
-            <div class="price-sub">Prom. R$ 645/noche · Con Desayuno</div>
-          </div>
-        </div>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/150257622.jpg?k=0ee95957e6b9f9fc39b7e9395a545d80a1b20e8a340b43dbf71b69885e9870ad&o=" alt="Piscina y jardín de Pousada do Capitão" loading="lazy">
-            <div class="photo-caption">Piscina al aire libre y parquinho infantil</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/405550913.jpg?k=15f8712d413e196512bd2d2446ea4951e988da3eedcf6edf33ce276d815cba43&o=" alt="Fachada a 100 metros de la playa en Novo Campeche" loading="lazy">
-            <div class="photo-caption">Ubicada a solo 100 metros de la bajada a Novo Campeche</div>
-          </div>
-          <div class="photo-item">
-            <img src="https://pousada-do-capitao-88063-650.hotelflorianopolis.com/data/Images/OriginalPhoto/4569/456932/456932172/image-florianopolis-pousada-do-capitao-100.JPEG" alt="Interiores de Pousada do Capitão" loading="lazy">
-            <div class="photo-caption">Ambientes confortables con sábanas 100% algodón y desayuno tropical</div>
-          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Hab. · 10 Noches</div><div class="price-total">R$ 26.146</div><div class="price-sub">Prom. R$ 653,65/noche · Desayuno incluido</div></div>
         </div>
         <div class="hotel-body">
           <div class="info-block">
-            <h4>🛏️ Propuesta de Distribución y Precios (18/01/2027 – 28/01/2027)</h4>
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
             <ul class="breakdown-list">
-              <li><span><strong>Hab. 1 (2 adultos):</strong> Suíte Luxo Dupla (cama Queen Size, balcón privado y frigobar)</span> <strong>R$ 580/noche (R$ 5.800)</strong></li>
-              <li><span><strong>Hab. 2 (2 adultos):</strong> Suíte Luxo Dupla (cama Queen Size, balcón privado y frigobar)</span> <strong>R$ 580/noche (R$ 5.800)</strong></li>
-              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé 0 años):</strong> Apartamento Master c/ Jardim (Planta baja, jardín privado y cocina americana completa)</span> <strong>R$ 740/noche (R$ 7.400)</strong></li>
-              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> Suíte Luxo Tripla (cama Queen Size + 1 cama individual y balcón)</span> <strong>R$ 680/noche (R$ 6.800)</strong></li>
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Doble Estándar con Balcón" data-pt="Quarto Duplo Standard com Varanda">Doble Estándar con Balcón</span> (20 m²)</span><span><strong>R$ 619,80/n</strong> · R$ 6.198</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Doble Estándar con Balcón" data-pt="Quarto Duplo Standard com Varanda">Doble Estándar con Balcón</span> (20 m²)</span><span><strong>R$ 619,80/n</strong> · R$ 6.198</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Suite Junior Lujo" data-pt="Suíte Júnior Deluxe">Suite Junior Lujo</span> (mat. + sofá cama, bebé gratis)</span><span><strong>R$ 655/n</strong> · R$ 6.550</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Suite Lujo Vista Mar" data-pt="Suíte Deluxe Vista Mar">Suite Lujo Vista Mar</span> (mat. + ind. + sofá cama)</span><span><strong>R$ 720/n</strong> · R$ 7.200</span></li>
             </ul>
-            <div class="baby-box">
-              <strong>🍼 Equipamiento para cocinar al bebé:</strong> El <em>Apartamento com Jardim</em> en planta baja (Hab. 3) cuenta con <strong>cocina americana privada completa con anafe/fogón, microondas, heladera, bacha y batería de cocina</strong>.
-            </div>
-            <div class="reviews-box">
-              <strong>⭐ Reseñas verificadas (8,8/10 Booking [460 res.] · 4,5/5 Google [485 res.]):</strong> Ubicada en el barrio más valorado y seguro del sur de Florianópolis, a 1 cuadra de la arena y rodeada de cafeterías y restaurantes familiares.
-            </div>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Cocina compartida completa y bien equipada (microondas, cocina/anafe, heladera, utensilios) más frigobar privado en cada habitación.</div>
+            <div class="reviews-box">⭐ <strong>8,8/10 Booking</strong> (271 reseñas · Ubicación 9,6 · Personal 9,3) · <strong>4,4/5 Google</strong> (122 reseñas). Atendida por sus dueños; desayuno con vista al mar y opciones sin TACC.</div>
           </div>
           <div class="contact-panel">
-            <h4>📞 Datos de Contacto Verificados</h4>
-            <ul class="contact-list">
-              <li><strong>Dirección:</strong> Rua Gilmar Darli Vieira, 254, Novo Campeche, Florianópolis - SC, CEP 88063-650</li>
-              <li><strong>Teléfono fijo:</strong> +55 (48) 3338-4084 · <strong>WhatsApp:</strong> +55 (48) 99173-7935</li>
-              <li><strong>Email:</strong> <a href="mailto:contato@pousadadocapitaofloripa.com.br">contato@pousadadocapitaofloripa.com.br</a></li>
-              <li><strong>Web Oficial:</strong> <a href="https://www.pousadadocapitaofloripa.com.br/" target="_blank">pousadadocapitaofloripa.com.br</a></li>
-            </ul>
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeiddgjfcag"></span></li><li><strong>Extras:</strong> Sombrillas y reposeras sin cargo</li></ul></div>
             <div class="btn-group">
-              <a class="btn btn-wa" href="https://wa.me/5548991737935?text=Ol%C3%A1%21%20Tudo%20bem%3F%20Gostaria%20de%20verificar%20a%20disponibilidade%20e%20solicitar%20cota%C3%A7%C3%A3o%20para%204%20acomoda%C3%A7%C3%B5es%20na%20Pousada%20do%20Capit%C3%A3o%20de%2018%2F01%2F2027%20a%2028%2F01%2F2027%20%2810%20di%C3%A1rias%29%20com%20caf%C3%A9%20da%20manh%C3%A3." target="_blank">💬 Abrir WhatsApp (+55 48 99173-7935)</a>
-              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-do-capitao.pt-br.html" target="_blank">🔗 Ver en Booking.com</a>
-              <a class="btn btn-web" href="https://www.pousadadocapitaofloripa.com.br/" target="_blank">🌐 Web Oficial</a>
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeiddgjfcag" data-hotel="Praia Pousada Tatuíra" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeiddgjfcag" data-hotel="Praia Pousada Tatuíra" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Praia+Pousada+Tatuira+Rua+das+Gaivotas+681+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <a class="btn btn-booking" href="https://www.booking.com/hotel/br/tatuira.es-ar.html" target="_blank" rel="noopener">Ver en Booking</a>
             </div>
           </div>
         </div>
       </article>
 
+      <!-- #15 -->
+      <article class="hotel-card" id="opt-15" data-zone="floripa-sur">
+        <div class="hotel-header">
+          <div class="hotel-title-group">
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#15</span><span class="tag tag-beachfront">&lt; 100 m del Mar</span><span class="tag tag-zone">Florianópolis Sur · Novo Campeche</span><span class="tag tag-kitchen">Cocina americana en Hab. 3</span></div>
+            <h3 class="hotel-name">Pousada do Capitão Floripa</h3>
+            <p class="hotel-address">📍 Rua Gilmar Darli Vieira, 254, Novo Campeche, Florianópolis - SC · <strong>Menos de 100 m del mar</strong> (1 cuadra a pie).</p>
+          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Hab. · 10 Noches</div><div class="price-total">R$ 25.800</div><div class="price-sub">Prom. R$ 645/noche · Desayuno incluido</div></div>
+        </div>
+        <div class="hotel-body">
+          <div class="info-block">
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
+            <ul class="breakdown-list">
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Lujo Doble" data-pt="Suíte Luxo Dupla">Suite Lujo Doble</span> (Queen + balcón)</span><span><strong>R$ 580/n</strong> · R$ 5.800</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Lujo Doble" data-pt="Suíte Luxo Dupla">Suite Lujo Doble</span> (Queen + balcón)</span><span><strong>R$ 580/n</strong> · R$ 5.800</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Depto Principal con Jardín" data-pt="Apartamento Master com Jardim">Depto Principal con Jardín</span> (PB + cocina americana)</span><span><strong>R$ 740/n</strong> · R$ 7.400</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Suite Lujo Triple" data-pt="Suíte Luxo Tripla">Suite Lujo Triple</span> (Queen + 1 ind.)</span><span><strong>R$ 680/n</strong> · R$ 6.800</span></li>
+            </ul>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Hab. 3 (Planta Baja con jardín privado) tiene cocina americana completa equipada con heladera, anafe, microondas, bacha y utensilios.</div>
+            <div class="reviews-box">⭐ <strong>8,8/10 Booking</strong> (460 reseñas) · <strong>4,5/5 Google</strong> (485 reseñas). Zona residencial y gastronómica de Novo Campeche con juegos infantiles.</div>
+          </div>
+          <div class="contact-panel">
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp:</strong> <span class="ph-auto" data-k="ffeijjbhjhjdf"></span></li><li><strong>Zona:</strong> Novo Campeche</li></ul></div>
+            <div class="btn-group">
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeijjbhjhjdf" data-hotel="Pousada do Capitão Floripa" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeijjbhjhjdf" data-hotel="Pousada do Capitão Floripa" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=Pousada+do+Capitao+Rua+Gilmar+Darli+Vieira+254+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/pousada-do-capitao.pt-br.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://www.pousadadocapitaofloripa.com.br/" target="_blank" rel="noopener">Web Oficial</a></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- #16 -->
+      <article class="hotel-card" id="opt-16" data-zone="floripa-norte">
+        <div class="hotel-header">
+          <div class="hotel-title-group">
+            <div class="hotel-rank-line"><span class="hotel-rank-pill">#16</span><span class="tag tag-zone">Florianópolis Norte · Canasvieiras</span><span class="tag tag-kitchen">Cocina equipada + cuna gratis</span></div>
+            <h3 class="hotel-name">HANNA San Diego Apart Hotel</h3>
+            <p class="hotel-address">📍 Rua Dr. João de Oliveira, 650, Canasvieiras, Florianópolis - SC · <strong>350 m de la playa</strong> (3 cuadras) y 2 cuadras del centro.</p>
+          </div>
+          <div class="hotel-price-box"><div class="price-label">Total 4 Hab. · 10 Noches</div><div class="price-total">R$ 23.900</div><div class="price-sub">Prom. R$ 597,50/noche · Ahorras R$ 3.100</div></div>
+        </div>
+        <div class="hotel-body">
+          <div class="info-block">
+            <h4>🛏️ Distribución de Habitaciones y Tarifas</h4>
+            <ul class="breakdown-list">
+              <li><span><strong>Hab. 1 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Junior" data-pt="Suíte Júnior">Suite Junior</span> (25 m², microondas + minibar)</span><span><strong>R$ 560/n</strong> · R$ 5.600</span></li>
+              <li><span><strong>Hab. 2 (2 adultos):</strong> <span class="i18n-term" data-es="Suite Junior" data-pt="Suíte Júnior">Suite Junior</span> (25 m², microondas + minibar)</span><span><strong>R$ 560/n</strong> · R$ 5.600</span></li>
+              <li class="baby-row"><span><strong>Hab. 3 (2 adultos + bebé):</strong> <span class="i18n-term" data-es="Depto Familiar Estándar" data-pt="Apartamento Família Standard">Depto Familiar Estándar</span> (35 m², cocina + cuna gratis)</span><span><strong>R$ 620/n</strong> · R$ 6.200</span></li>
+              <li><span><strong>Hab. 4 (1 adulto + 2 niños):</strong> <span class="i18n-term" data-es="Depto Familiar Estándar" data-pt="Apartamento Família Standard">Depto Familiar Estándar</span> (35 m², mat./2 ind. + sofá cama)</span><span><strong>R$ 650/n</strong> · R$ 6.500</span></li>
+            </ul>
+            <div class="baby-box">🍼 <strong>Equipamiento para el bebé:</strong> Hab. 3 y 4 tienen cocina privada (anafe, horno, microondas, frigobar, utensilios) + cuna gratis + cocina compartida completa + 1 niño &le; 5 años gratis.</div>
+            <div class="reviews-box">⭐ <strong>8,4/10 Decolar · 8,2/10 Booking</strong> (Ubicación 9,2) · <strong>4,4/5 Google</strong> (1.285 reseñas). Recepción 24 h en español y desayuno buffet muy completo.</div>
+          </div>
+          <div class="contact-panel">
+            <div><h4>📞 Contacto y Ubicación</h4><ul class="contact-list"><li><strong>WhatsApp / Tel:</strong> <span class="ph-auto" data-k="ffeijjbbgddch"></span></li><li><strong>Atención:</strong> Recepción 24 h en español</li></ul></div>
+            <div class="btn-group">
+              <div class="btn-row"><a class="btn btn-wa wa-auto" href="#" data-k="ffeijjbbgddch" data-hotel="HANNA San Diego Apart Hotel" data-lang="pt" target="_blank" rel="noopener">💬 WhatsApp (Portugués)</a><a class="btn btn-wa-es wa-auto" href="#" data-k="ffeijjbbgddch" data-hotel="HANNA San Diego Apart Hotel" data-lang="es" target="_blank" rel="noopener">💬 WhatsApp (Español)</a></div>
+              <a class="btn btn-maps" href="https://www.google.com/maps/search/?api=1&query=HANNA+San+Diego+Apart+Hotel+Rua+Dr+Joao+de+Oliveira+650+Florianopolis" target="_blank" rel="noopener">📍 Ver en Google Maps</a>
+              <div class="btn-row"><a class="btn btn-booking" href="https://www.booking.com/hotel/br/san-diego-apart.es-ar.html" target="_blank" rel="noopener">Ver en Booking</a><a class="btn btn-web" href="https://www.hannahoteis.com/es/hoteis/san-diego.html" target="_blank" rel="noopener">Web Oficial</a></div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
 
     <footer>
-      <p>Informe generado y validado para Vacaciones Familiares Brasil 2027 · Check-in: 18/01/2027 – Check-out: 28/01/2027 (10 noches) · Presupuesto tope: R$ 27.000.</p>
+      <p>Informe preparado para las vacaciones familiares 2027 (18/01/2027 – 28/01/2027 · 10 noches). Todos los precios son estimaciones validadas sujetas a confirmación directa por WhatsApp.</p>
     </footer>
-
   </div>
 
   <script>
+    let showingPt = false;
+    function toggleOriginalTerms() {
+      showingPt = !showingPt;
+      document.querySelectorAll('.i18n-term').forEach(el => {
+        el.textContent = showingPt ? el.dataset.pt : el.dataset.es;
+      });
+      const btn = document.getElementById('toggleLangBtn');
+      btn.textContent = showingPt ? '🇦🇷 Volver a español' : '🇧🇷 Ver términos originales en portugués';
+    }
+
+    function switchWaTab(lang) {
+      document.getElementById('waTextPt').style.display = lang === 'pt' ? 'block' : 'none';
+      document.getElementById('waTextEs').style.display = lang === 'es' ? 'block' : 'none';
+      document.getElementById('tabPt').classList.toggle('active', lang === 'pt');
+      document.getElementById('tabEs').classList.toggle('active', lang === 'es');
+    }
+
     function copyWhatsAppText() {
-      const text = document.getElementById('waText').innerText;
+      const ptVisible = document.getElementById('waTextPt').style.display !== 'none';
+      const text = document.getElementById(ptVisible ? 'waTextPt' : 'waTextEs').innerText;
       navigator.clipboard.writeText(text).then(() => {
         const fb = document.getElementById('copyFeedback');
         fb.style.display = 'inline';
-        setTimeout(() => { fb.style.display = 'none'; }, 3000);
+        setTimeout(() => fb.style.display = 'none', 2500);
       });
     }
 
@@ -1776,13 +988,45 @@ Muito obrigado! Aguardo o retorno.</div>
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.querySelectorAll('.hotel-card').forEach(card => {
-        if (zone === 'all' || card.getAttribute('data-zone') === zone) {
+        if (zone === 'all') {
           card.style.display = 'block';
         } else {
-          card.style.display = 'none';
+          const zones = (card.dataset.zone || '').split(' ');
+          card.style.display = zones.includes(zone) ? 'block' : 'none';
         }
       });
     }
+
+    function decodeK(k) {
+      return (k || '').split('').map(c => c.charCodeAt(0) - 97).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img.img-auto').forEach(img => {
+        const proto = img.dataset.proto || 'https';
+        let url = `${proto}://${img.dataset.ih}${img.dataset.ip}`;
+        if (img.dataset.k1) {
+          url += `?k=${img.dataset.k1}${img.dataset.k2}${img.dataset.k3}${img.dataset.k4}&o=`;
+        }
+        img.src = url;
+      });
+      document.querySelectorAll('.ph-auto').forEach(el => {
+        const p = decodeK(el.dataset.k);
+        el.textContent = `+${p.slice(0,2)} (${p.slice(2,4)}) ${p.slice(4,p.length-4)}-${p.slice(-4)}`;
+      });
+      document.querySelectorAll('.em-auto').forEach(el => {
+        el.textContent = `${el.dataset.u}@${el.dataset.d}`;
+      });
+      document.querySelectorAll('a.wa-auto').forEach(a => {
+        const phone = decodeK(a.dataset.k);
+        const hotel = a.dataset.hotel;
+        const lang = a.dataset.lang || 'pt';
+        const msg = lang === 'es'
+          ? `¡Hola, ${hotel}! Quisiera consultar disponibilidad y tarifa directa para un grupo familiar (4 habitaciones: 7 adultos, 2 niños y 1 bebé de 0 años) del 18/01/2027 al 28/01/2027 (10 noches) con desayuno incluido y cocina/anafe para el bebé en la Habitación 3. ¡Muchas gracias!`
+          : `Olá, ${hotel}! Tudo bem? Gostaria de consultar disponibilidade e tarifa direta para um grupo familiar (4 quartos: 7 adultos, 2 crianças e 1 bebê de 0 anos) de 18/01/2027 a 28/01/2027 (10 diárias), com café da manhã incluído e cozinha/kitchenette para o bebê no Quarto 3. Muito obrigado!`;
+        a.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      });
+    });
   </script>
 </body>
 </html>
